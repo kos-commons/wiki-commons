@@ -132,6 +132,9 @@ def main(argv: list[str]) -> int:
     shutil.copy2(BOOK / "README.md", out / "book" / "README.md")  # the "Building the site" page
     (out / "corpus").mkdir()
     shutil.copy2(ROOT / "corpus" / "README.md", out / "corpus" / "README.md")
+    for sub in ("", "remark", "pandoc"):
+        (out / "converters" / sub).mkdir(parents=True, exist_ok=True)
+        shutil.copy2(ROOT / "converters" / sub / "README.md", out / "converters" / sub / "README.md")
 
     # examples: copy everything, adapting Markdown pages
     page_links: list[tuple[str, str]] = []

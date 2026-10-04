@@ -41,6 +41,7 @@
 - [E · Glossary](guidelines/appendices/E-Glossary.md)
 - [F · References](guidelines/appendices/F-References.md)
 - [G · Open Knowledge Format Alignment](guidelines/appendices/G-Open_Knowledge_Format_Alignment.md)
+- [H · BookStack and MediaWiki Alignment](guidelines/appendices/H-BookStack_and_MediaWiki_Alignment.md)
 
 # Companion Material
 
@@ -56,6 +57,9 @@
   - [ADR-001 Use Markdown](examples/portable-wiki-bundle/pages/Decisions/ADR-001-Use-Markdown.md)
 - [Tools](tools/index.md)
 - [Conformance Corpus](corpus/index.md)
+- [Converters](converters/index.md)
+  - [remark plugin](converters/remark/index.md)
+  - [Pandoc filter](converters/pandoc/index.md)
 - [Building the site](book/index.md)
 - [Contributing](CONTRIBUTING.md)
 - [Changelog](CHANGELOG.md)

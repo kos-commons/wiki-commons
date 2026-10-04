@@ -9,7 +9,7 @@ Thank you for helping. These guidelines are only as good as the evidence behind 
 - **Patterns** for Part II that you see in the wild and that the language lacks, with evidence from at least two engines or a strong argument from one.
 - **Recommendations** for Part III, with the interoperability problem they solve and the engines that already do something like it.
 - **Syntax crosswalk rows** for [Appendix B](guidelines/appendices/B-Syntax_Crosswalk.md).
-- **Tooling:** converters, validators, and test cases for the conformance corpus ([corpus/README.md](corpus/README.md), [17 · Roadmap](guidelines/17-Roadmap_and_Open_Questions.md)). A corpus case that reproduces a disagreement between two real engines is especially valuable.
+- **Tooling:** converters, validators, and test cases for the conformance corpus ([corpus/README.md](corpus/README.md), [17 · Roadmap](guidelines/17-Roadmap_and_Open_Questions.md)). A corpus case that reproduces a disagreement between two real engines is especially valuable. Adapters for further toolchains (markdown-it, Python-Markdown, goldmark, comrak) belong in [converters/](converters/README.md).
 - **Answers to the open questions** in Chapter 17, or better questions.
 
 The suite is written and maintained in English; translations are not planned.

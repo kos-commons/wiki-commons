@@ -260,6 +260,9 @@ def okf_to_bundle(okf: Path, out: Path, *, name: Optional[str] = None) -> dict:
         if f.suffix.lower() == ".md":
             if f.name.lower() == "index.md":
                 continue
+            if rel in ("export-report.md", "import-report.md"):
+                notes.add(f"{rel}: conversion report written by the tooling, not imported")
+                continue
             if f.name.lower() == "log.md":
                 logs.append(rel)
             else:

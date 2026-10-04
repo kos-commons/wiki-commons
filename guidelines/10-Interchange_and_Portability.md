@@ -282,7 +282,7 @@ The bundle is designed so that existing formats map onto it rather than compete 
 
 | Existing format | Mapping to the bundle |
 |---|---|
-| **MediaWiki XML dump** (`export-0.11` schema) | One `<page>` → one page file; `<revision>` elements → `history/` records (wikitext converted to the portable profile per revision or, at lower fidelity, latest only, with wikitext preserved under `ext.mediawiki.wikitext`); `<contributor>` → `users.yaml`; categories → `tags`; redirects → `redirect:`. Parsoid HTML or Pandoc as the conversion bridge. |
+| **MediaWiki XML dump** (`export-0.11` schema) | One `<page>` → one page file; `<revision>` elements → `history/` records with content converted per revision; `<contributor>` → `users.yaml` (IP addresses pseudonymized); categories → `tags`; redirects → `redirect:` and the target's `aliases`; templates kept as envelopes and restored on export. Pandoc as the optional conversion bridge. [Appendix H](appendices/H-BookStack_and_MediaWiki_Alignment.md); the reference tooling converts both ways. |
 | **Confluence space export (XML)** | Pages → files with `ext.confluence` for storage-format remnants; labels → `tags`; versions → history; comments → discussions; macros → snapshot envelopes. |
 | **Notion export (Markdown + CSV)** | Already close: Markdown pages → `pages/`, CSV databases → `structured/tables/` plus row pages; identifiers from URLs → `id`. |
 | **Obsidian vault**, **Foam**, **Dendron**, **Logseq graph** | Already bundles in all but name: add a manifest, normalize link order and separators, map properties ([Chapter 09 §5](09-Metadata_and_Frontmatter.md#5-mapping-from-engines)). |
@@ -292,7 +292,7 @@ The bundle is designed so that existing formats map onto it rather than compete 
 | **DokuWiki data directory** | `pages/` → `pages/` with `:` → `/`; `attic/` + `.changes` → `history/`; `media/` → `attachments/`. |
 | **Git-backed wikis** (Gollum, ikiwiki, Otter Wiki, Wiki.js git sync, GitBook git sync) | Commits → history records; the repository is otherwise already a bundle. |
 | **Open Knowledge Format** (OKF, Google Cloud, 2026; exported by Outline) | A directory of Markdown concepts with YAML frontmatter, per-directory `index.md` listings, and `log.md` histories; the closest existing cousin of this layout. [Appendix G](appendices/G-Open_Knowledge_Format_Alignment.md) maps the two field by field, and the reference tooling converts in both directions. |
-| **BookStack Portable ZIP** | Data plus attachments and images in a documented, re-importable archive; shelves, books, and chapters → directories, pages → files, tags → `tags`. |
+| **BookStack Portable ZIP** | `data.json` plus `files/` in a documented, re-importable archive; books and chapters → category pages with directories, pages → files, tags → `tags` and `properties`, `[[bsexport:...]]` references → free links and attachment paths. [Appendix H](appendices/H-BookStack_and_MediaWiki_Alignment.md); the reference tooling converts both ways. |
 | **Anytype Any-Block**, **SiYuan `.sy`**, **AFFiNE snapshots** | Lossless block JSON kept under `ext.<engine>` or as a sidecar, with the Markdown rendering as the portable body and block identifiers as `^id`. |
 | **Nuclino API Markdown** | Already CommonMark plus GFM with engine metadata in HTML comments; comments and native links map to `discussions/` and free links. |
 | **GROWI archive** | A dump of database collections importable only into the same engine version, which is exactly the situation a bundle is meant to improve on; per-page Markdown with frontmatter maps directly. |

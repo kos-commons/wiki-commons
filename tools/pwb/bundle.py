@@ -328,6 +328,8 @@ def iter_files(src: Path):
             continue
         if parts[-1].startswith(".") or parts[-1] in ("wiki-bundle.yaml", "sha256sums.txt"):
             continue
+        if len(parts) == 1 and parts[-1] in ("import-report.md", "export-report.md"):
+            continue  # conversion reports written by the tooling are not content
         yield p
 
 

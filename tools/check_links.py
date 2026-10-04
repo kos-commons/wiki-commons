@@ -77,7 +77,7 @@ def main(argv: list[str]) -> int:
     checked = 0
     for md in sorted(root.rglob("*.md")):
         rel_parts = md.relative_to(root).parts
-        if ".git" in md.parts or rel_parts[:1] == ("book",):
+        if ".git" in md.parts or "node_modules" in md.parts or rel_parts[:1] == ("book",):
             continue
         if rel_parts[:1] == ("corpus",) and len(rel_parts) > 2:
             continue  # corpus case files are test data, not documents

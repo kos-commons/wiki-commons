@@ -149,10 +149,12 @@ guidelines/
     E-Glossary.md
     F-References.md
     G-Open_Knowledge_Format_Alignment.md
+    H-BookStack_and_MediaWiki_Alignment.md
 schemas/          machine-readable JSON Schemas for metadata and manifests
 examples/         a small, complete Portable Wiki Bundle
 corpus/           conformance corpus with reviewed expectations
-tools/            reference tooling: scanner, converters, bundle build and unbundle, OKF interchange, validator
+converters/       optional adapters for other toolchains (remark plugin, Pandoc filter)
+tools/            reference tooling: scanner, converters, bundle build and unbundle, OKF, BookStack, and MediaWiki interchange, reports, validator
 tests/            unit and round-trip tests
 book/             mdBook configuration for the published site
 ```

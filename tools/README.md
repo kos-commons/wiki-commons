@@ -8,8 +8,8 @@ Small, dependency-light helpers that accompany the guidelines. They are referenc
 | `check_links.py` | Checks that every relative Markdown link and heading anchor inside this repository's own documents resolves. Run in CI and before releases. |
 | `build_book.py` | Assembles the mdBook source tree in `book/src/` by mirroring the repository layout, adapting the example bundle's pages, and verifying `book/SUMMARY.md`. See [book/README.md](../book/README.md). |
 | `check_site.py` | Checks every internal link and anchor in a built site (`book/book/`). Run in CI after `mdbook build`. |
-| `wikicommons.py` | Command-line entry point for the reference tooling in `pwb/`: `scan`, `convert`, `resolve`, `bundle`, `unbundle`, `okf export|import`, `validate`, `corpus check|update`. |
-| `pwb/` | The library: `markup` (scanner and dialect converter), `resolve` (link resolution), `bundle` (folder ↔ bundle, frontmatter mapping, attachments), `history` (git history replay), `okf` (Open Knowledge Format), `corpus` (corpus runner), `cli`. |
+| `wikicommons.py` | Command-line entry point for the reference tooling in `pwb/`: `scan`, `convert`, `resolve`, `bundle`, `unbundle`, `okf export|import`, `bookstack import|export`, `mediawiki import|export`, `validate`, `corpus check|update`. Import and export commands write `import-report.md` / `export-report.md` beside their result (XFER-13) unless `--no-report` is given. |
+| `pwb/` | The library: `markup` (scanner and dialect converter), `resolve` (link resolution), `bundle` (folder ↔ bundle, frontmatter mapping, attachments), `history` (git history replay), `okf` (Open Knowledge Format), `bookstack` (Portable ZIP), `mediawiki` (XML dumps), `external` (optional Pandoc bridge; set `WIKI_COMMONS_PANDOC` to a binary off the PATH, or to `off`), `report` (import/export reports), `corpus` (corpus runner), `cli`. |
 | `wiki-commons.yaml` | The tooling's self-assessment against the conformance profiles of chapter 16. |
 
 ```sh

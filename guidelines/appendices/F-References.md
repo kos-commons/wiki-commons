@@ -17,7 +17,7 @@ Versions and dates were checked against primary sources (specification home page
 - **Generic directives / plugins syntax** discussion, CommonMark forum (since 2014; not adopted into the specification). https://talk.commonmark.org/t/generic-directives-plugins-syntax/444 — Implementations: `remark-directive` (4.0.0, 2025), `markdown-it-container` (4.0.0, 2023).
 - **Obsidian Flavored Markdown**, **Callouts**, **Properties**, **Bases** (help documentation). Obsidian. https://help.obsidian.md/obsidian-flavored-markdown , https://help.obsidian.md/callouts , https://help.obsidian.md/properties , https://help.obsidian.md/bases — Bases introduced in 1.9.0 (May 2025), generally available in 1.9.10 (August 2025).
 - **JSON Canvas Spec**, version 1.0, 11 March 2024, MIT license. https://jsoncanvas.org/spec/1.0/
-- **Pandoc** 3.12 (29 September 2026), John MacFarlane. https://pandoc.org/ — Wikilink extensions `wikilinks_title_after_pipe` and `wikilinks_title_before_pipe` since 3.0 (January 2023). Readers: creole, djot, dokuwiki, jira, mediawiki, muse, org, t2t, tikiwiki, twiki, vimwiki. Writers: djot, dokuwiki, jira, markua, mediawiki, muse, org, t2t, xwiki, zimwiki.
+- **Pandoc** 3.12 (29 September 2026), John MacFarlane. https://pandoc.org/ (Lua filters: https://pandoc.org/lua-filters.html) — Wikilink extensions `wikilinks_title_after_pipe` and `wikilinks_title_before_pipe` since 3.0 (January 2023). Readers: creole, djot, dokuwiki, jira, mediawiki, muse, org, t2t, tikiwiki, twiki, vimwiki. Writers: djot, dokuwiki, jira, markua, mediawiki, muse, org, t2t, xwiki, zimwiki.
 - **RFC 7763**, *The text/markdown Media Type*, March 2016, Informational. https://www.rfc-editor.org/info/rfc7763 — `charset` parameter required; optional `variant`.
 - **RFC 7764**, *Guidance on Markdown: Design Philosophies, Stability Strategies, and Select Registrations*, March 2016, Informational. https://www.rfc-editor.org/info/rfc7764
 - **IANA Markdown Variants registry** (first come, first served; thirteen entries including Original, MultiMarkdown, GFM, pandoc, CommonMark, Extra, myst). https://www.iana.org/assignments/markdown-variants/
@@ -37,6 +37,7 @@ Versions and dates were checked against primary sources (specification home page
 - **Notion API block object**. https://developers.notion.com/reference/block
 - **Portable Text** (Sanity). https://github.com/portabletext/portabletext
 - **ProseMirror document model**. https://prosemirror.net/docs/guide/#doc
+- **BookStack Portable ZIP file format**, BookStack project, `dev/docs/portable-zip-file-format.md` in the BookStack repository (https://codeberg.org/bookstack/bookstack; mirrored at https://github.com/BookStackApp/BookStack). See [Appendix H](H-BookStack_and_MediaWiki_Alignment.md).
 - **Open Knowledge Format (OKF)**, version 0.2, Google Cloud, 2026 (0.1 published June 2026). Canonical repository: https://github.com/GoogleCloudPlatform/open-knowledge-format (specification in `SPEC.md`; an earlier frozen copy lives under `okf/` in `GoogleCloudPlatform/knowledge-catalog`). Outline's OKF export shipped in Outline 1.10.1 (September 2026). See [Appendix G](G-Open_Knowledge_Format_Alignment.md).
 
 ### Metadata and identifiers

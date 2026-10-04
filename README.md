@@ -48,8 +48,10 @@ guidelines/
 schemas/                                           JSON Schemas for frontmatter, manifest, history, discussions, attachments, site description, self-assessment
 examples/portable-wiki-bundle/                     a small, complete bundle exercising every optional part
     G-Open_Knowledge_Format_Alignment.md           field-by-field mapping to Google Cloud's OKF and the choices made to stay close
+    H-BookStack_and_MediaWiki_Alignment.md         mappings for BookStack's Portable ZIP and MediaWiki's XML dump
 corpus/                                            conformance corpus: markup, resolution, and bundle cases with reviewed expectations
-tools/                                             reference tooling: scanner, dialect converters, bundle build/unbundle, OKF import/export, validator, link checkers
+converters/                                        optional adapters for other toolchains: a remark plugin and a Pandoc Lua filter
+tools/                                             reference tooling: scanner, dialect converters, bundle build/unbundle, OKF, BookStack, and MediaWiki import/export, reports, validator, link checkers
 tests/                                             unit and round-trip tests (python3 -m unittest discover -s tests)
 book/                                              mdBook configuration and table of contents for the published site
 .github/workflows/pages.yml                        CI: tests, corpus, site build, and GitHub Pages deployment
@@ -80,10 +82,14 @@ python3 tools/wikicommons.py convert page.md --from obsidian --to static # conve
 python3 tools/wikicommons.py bundle ~/vault out/bundle --dialect obsidian --history   # vault (with git history) → bundle
 python3 tools/wikicommons.py unbundle out/bundle out/site --dialect static             # bundle → static-site Markdown
 python3 tools/wikicommons.py okf export out/bundle out/okf               # bundle → Open Knowledge Format
+python3 tools/wikicommons.py mediawiki import dump.xml out/bundle        # MediaWiki XML dump (with history) → bundle
+python3 tools/wikicommons.py bookstack import Handbook.zip out/bundle    # BookStack Portable ZIP → bundle
 python3 tools/wikicommons.py corpus check                                # run the conformance corpus
 ```
 
-Dialects: `portable`, `obsidian`, `foam`, `dendron`, `logseq`, `gollum` (GitHub and GitLab wikis), `static`. See [tools/README.md](tools/README.md) and [corpus/README.md](corpus/README.md).
+Every import and export writes a report beside its result saying what was degraded or dropped. Dialects: `portable`, `obsidian`, `foam`, `dendron`, `logseq`, `gollum` (GitHub and GitLab wikis), `static`. Pandoc, when installed, extends the conversions (HTML and wikitext); without it the tools still run and say what they could not convert. See [tools/README.md](tools/README.md), [corpus/README.md](corpus/README.md), and [converters/README.md](converters/README.md) for the remark plugin and the Pandoc filter.
+
+All of this tooling is optional. The guidelines describe conventions an engine *may* adopt; the tools exist so that adopting them, or moving content between engines that have not, costs less.
 
 ## Building the site locally
 

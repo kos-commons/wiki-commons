@@ -6,9 +6,13 @@ Modules:
   bundle   assemble a Portable Wiki Bundle from a folder of Markdown, and back
   history  revision history from a git repository as portable history records
   okf      Open Knowledge Format (OKF) interchange
+  bookstack BookStack Portable ZIP interchange
+  mediawiki MediaWiki XML dump interchange
+  external optional Pandoc bridge for formats the built-in code does not cover
+  report   import and export reports (XFER-13)
   corpus   run the conformance corpus
   cli      command-line interface (see tools/wikicommons.py)
 
 Standard library only, plus PyYAML for YAML files.
 """
-__version__ = "0.2.0"
+__version__ = "0.3.0"

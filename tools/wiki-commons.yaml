@@ -4,10 +4,10 @@ format: wiki-commons-self-assessment
 version: "0.1"
 subject:
   name: wiki-commons-tools
-  version: "0.2.0"
+  version: "0.3.0"
   url: https://github.com/kos-commons/wiki-commons/tree/main/tools
   kind: tool
-assessed_at: "2026-10-04"
+assessed_at: "2026-10-05"
 profiles:
   bundle-exporter:
     claim: partial
@@ -27,7 +27,7 @@ profiles:
   bundle-importer:
     claim: partial
     items:
-      XFER-13: {status: partial, note: "degradation notes are returned by the API and printed by the CLI; no report page is written into the destination"}
+      XFER-13: {status: "yes", note: "every import and export command writes import-report.md or export-report.md beside its result (summary, fidelity, degraded constructs, dangling links); --no-report disables it"}
       XFER-14: {status: "no", note: "whole-bundle operations only; no incremental import"}
       META-11: {status: "yes", note: "unknown frontmatter keys preserved; engine-specific keys kept under ext"}
       LIC-4: {status: partial, note: "contributors and license travel with pages; no attribution notice is generated"}

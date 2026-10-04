@@ -16,6 +16,7 @@ concurrency:
 
 env:
   MDBOOK_VERSION: "0.5.4"
+  PANDOC_VERSION: "3.12"
 
 jobs:
   build:
@@ -39,11 +40,36 @@ jobs:
       - name: Validate the example Portable Wiki Bundle
         run: python tools/validate_bundle.py examples/portable-wiki-bundle
 
-      - name: Run the test suite
+      - name: Install Pandoc ${{ env.PANDOC_VERSION }} (optional dependency exercised by the tests)
+        run: |
+          mkdir -p "$HOME/.local"
+          curl -sSfL "https://github.com/jgm/pandoc/releases/download/${PANDOC_VERSION}/pandoc-${PANDOC_VERSION}-linux-amd64.tar.gz" \
+            | tar -xz -C "$HOME/.local" --strip-components=1
+          echo "$HOME/.local/bin" >> "$GITHUB_PATH"
+          "$HOME/.local/bin/pandoc" --version | head -1
+
+      - name: Run the test suite (with Pandoc)
         run: python -m unittest discover -s tests -v
+
+      - name: Run the test suite (without Pandoc)
+        run: WIKI_COMMONS_PANDOC=off python -m unittest discover -s tests
 
       - name: Run the conformance corpus
         run: python tools/wikicommons.py corpus check
+
+      - name: Test the Pandoc filter
+        run: sh converters/pandoc/test.sh
+
+      - name: Set up Node
+        uses: actions/setup-node@v7
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: converters/remark/package-lock.json
+
+      - name: Test the remark plugin
+        working-directory: converters/remark
+        run: npm ci && npm test
 
       - name: Install mdBook ${{ env.MDBOOK_VERSION }}
         run: |
