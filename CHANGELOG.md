@@ -2,6 +2,12 @@
 
 All notable changes to the Wiki Commons guidelines. Versions follow a semantic scheme: a major version only when published identifiers change meaning, a minor version when patterns or recommendations are added, a patch version for editorial corrections.
 
+## 0.1.1 — 2026-10-04
+
+- Published site: the suite is built with mdBook and deployed to GitHub Pages at <https://kos-commons.github.io/wiki-commons/> by `.github/workflows/pages.yml` on every push to `main`; pull requests run the same checks and build without deploying.
+- `tools/build_book.py` assembles the book source from the repository layout; `tools/check_site.py` checks links and anchors in the built site; `tools/check_links.py` ignores the generated `book/` tree.
+- Example bundle pages are rendered on the site with their frontmatter shown as a code block.
+
 ## 0.1.0 — 2026-10-04 · Working Draft
 
 First complete draft.

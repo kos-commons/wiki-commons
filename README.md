@@ -3,6 +3,8 @@
 **Open guidelines for wiki engines: a pattern language for the wiki experience and a set of portable conventions so that knowledge outlives the software it was written in.**
 
 > Status: **Working Draft 0.1** (October 2026). Everything here is open for discussion; identifiers may still change before 1.0. See [CHANGELOG](CHANGELOG.md) and [CONTRIBUTING](CONTRIBUTING.md).
+>
+> Read online: **<https://kos-commons.github.io/wiki-commons/>** (built from this repository on every push to `main`).
 
 ## Why
 
@@ -45,7 +47,9 @@ guidelines/
     F-References.md                                standards (versions checked October 2026), history, research
 schemas/                                           JSON Schemas for frontmatter, manifest, history, discussions, attachments, site description, self-assessment
 examples/portable-wiki-bundle/                     a small, complete bundle exercising every optional part
-tools/                                             a dependency-free bundle validator and a link checker
+tools/                                             bundle validator, link checkers, and the site assembly script
+book/                                              mdBook configuration and table of contents for the published site
+.github/workflows/pages.yml                        CI: checks, site build, and GitHub Pages deployment
 ```
 
 ## Where to start
@@ -67,6 +71,18 @@ tools/                                             a dependency-free bundle vali
 ```sh
 python3 tools/validate_bundle.py examples/portable-wiki-bundle
 ```
+
+## Building the site locally
+
+The site is an [mdBook](https://rust-lang.github.io/mdBook/). The source tree is assembled from the repository by a script, then built:
+
+```sh
+python3 tools/build_book.py
+mdbook build book            # output in book/book/
+mdbook serve book --open     # local preview
+```
+
+See [book/README.md](book/README.md) for details.
 
 ## Contributing
 

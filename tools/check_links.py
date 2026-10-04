@@ -76,7 +76,7 @@ def main(argv: list[str]) -> int:
     broken: list[str] = []
     checked = 0
     for md in sorted(root.rglob("*.md")):
-        if ".git" in md.parts:
+        if ".git" in md.parts or (md.relative_to(root).parts[:1] == ("book",)):
             continue
         text = strip_fences(md.read_text(encoding="utf-8"))
         text = INLINE_CODE_RE.sub("", text)

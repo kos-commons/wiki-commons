@@ -150,7 +150,8 @@ guidelines/
     F-References.md
 schemas/          machine-readable JSON Schemas for metadata and manifests
 examples/         a small, complete Portable Wiki Bundle
-tools/            a dependency-free bundle validator and a link checker
+tools/            bundle validator, link checkers, and the site assembly script
+book/             mdBook configuration for the published site
 ```
 
 ### 8.1 Identifiers
