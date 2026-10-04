@@ -47,9 +47,12 @@ guidelines/
     F-References.md                                standards (versions checked October 2026), history, research
 schemas/                                           JSON Schemas for frontmatter, manifest, history, discussions, attachments, site description, self-assessment
 examples/portable-wiki-bundle/                     a small, complete bundle exercising every optional part
-tools/                                             bundle validator, link checkers, and the site assembly script
+    G-Open_Knowledge_Format_Alignment.md           field-by-field mapping to Google Cloud's OKF and the choices made to stay close
+corpus/                                            conformance corpus: markup, resolution, and bundle cases with reviewed expectations
+tools/                                             reference tooling: scanner, dialect converters, bundle build/unbundle, OKF import/export, validator, link checkers
+tests/                                             unit and round-trip tests (python3 -m unittest discover -s tests)
 book/                                              mdBook configuration and table of contents for the published site
-.github/workflows/pages.yml                        CI: checks, site build, and GitHub Pages deployment
+.github/workflows/pages.yml                        CI: tests, corpus, site build, and GitHub Pages deployment
 ```
 
 ## Where to start
@@ -66,11 +69,21 @@ book/                                              mdBook configuration and tabl
 2. **Put the basics in frontmatter** when you export: `title`, `id`, `aliases`, `tags`, `created`, `updated`, `contributors`, `status`, `license`. ([Chapter 09](guidelines/09-Metadata_and_Frontmatter.md))
 3. **Write a manifest** for your export and say truthfully what it drops. ([Chapter 10](guidelines/10-Interchange_and_Portability.md))
 
-## Validating a bundle
+## Tooling
+
+The repository ships reference tooling (Python 3 and PyYAML only) that implements the testable parts of the guidelines:
 
 ```sh
-python3 tools/validate_bundle.py examples/portable-wiki-bundle
+python3 tools/validate_bundle.py examples/portable-wiki-bundle           # validate a bundle
+python3 tools/wikicommons.py scan page.md                                # list the wiki constructs in a page
+python3 tools/wikicommons.py convert page.md --from obsidian --to static # convert between dialects
+python3 tools/wikicommons.py bundle ~/vault out/bundle --dialect obsidian --history   # vault (with git history) → bundle
+python3 tools/wikicommons.py unbundle out/bundle out/site --dialect static             # bundle → static-site Markdown
+python3 tools/wikicommons.py okf export out/bundle out/okf               # bundle → Open Knowledge Format
+python3 tools/wikicommons.py corpus check                                # run the conformance corpus
 ```
+
+Dialects: `portable`, `obsidian`, `foam`, `dendron`, `logseq`, `gollum` (GitHub and GitLab wikis), `static`. See [tools/README.md](tools/README.md) and [corpus/README.md](corpus/README.md).
 
 ## Building the site locally
 

@@ -52,7 +52,7 @@ review:
   at: "2026-06-01"
   revision: r0412
 license: CC-BY-SA-4.0
-summary: What happens when two people save the same page at once, and how engines reconcile it.
+description: What happens when two people save the same page at once, and how engines reconcile it.
 canonical: https://wiki.example.org/wiki/Edit_Conflicts
 visibility: public
 properties:
@@ -122,7 +122,7 @@ Both are RFC 3339 timestamps with an explicit offset or `Z`. `created` is the fi
 
 ### Description and relations
 
-**`summary`** (string): one or two sentences describing the page, suitable for search results, link previews, and `<meta name="description">`.
+**`description`** (string): one or two sentences describing the page, suitable for search results, link previews, and `<meta name="description">`. The key is shared with Dublin Core, schema.org, the Open Knowledge Format, Hugo, Jekyll, and Obsidian Publish; importers **should** accept `summary` and `desc` as synonyms.
 
 **`related`** (list of titles or paths): hand-curated related pages, when the engine keeps them outside the body.
 
@@ -149,7 +149,7 @@ When rendering a page to HTML, engines **should** expose the portable metadata t
 | `title` | `dcterms:title` | `name`, `headline` |
 | `aliases` | `dcterms:alternative` | `alternateName` |
 | `id` | `dcterms:identifier` | `identifier` |
-| `summary` | `dcterms:abstract`, `dcterms:description` | `description`, `abstract` |
+| `description` | `dcterms:abstract`, `dcterms:description` | `description`, `abstract` |
 | `tags` | `dcterms:subject` | `keywords` |
 | `lang` | `dcterms:language` | `inLanguage` |
 | `created` | `dcterms:created` | `dateCreated` |
@@ -192,9 +192,9 @@ Appendix C gives a full crosswalk. The main correspondences:
 | Engine | Native mechanism | Portable mapping |
 |---|---|---|
 | **Obsidian** | Properties (YAML): `tags`, `aliases`, `cssclasses`, custom | Same keys for `tags` and `aliases`; `cssclasses` and custom keys under `ext.obsidian` or `properties` |
-| **Dendron** | `id`, `title`, `desc`, `created`, `updated` (epoch milliseconds) | `id`, `title`, `summary`; timestamps converted to RFC 3339 |
+| **Dendron** | `id`, `title`, `desc`, `created`, `updated` (epoch milliseconds) | `id`, `title`, `description`; timestamps converted to RFC 3339 |
 | **Logseq** | Page properties `title::`, `alias::`, `tags::`, custom `key:: value` | `title`, `aliases`, `tags`; custom into `properties` |
-| **Hugo / Jekyll** | `title`, `date`, `lastmod`, `tags`, `categories`, `draft`, `aliases`, `slug` | `title`, `created`, `updated`, `tags` (categories flattened), `status: draft`, `aliases` |
+| **Hugo / Jekyll** | `title`, `date`, `lastmod`, `tags`, `categories`, `draft`, `aliases`, `slug`, `description` | `title`, `created`, `updated`, `tags` (categories flattened), `status: draft`, `aliases`, `description` |
 | **MediaWiki** | Page title, categories, `DISPLAYTITLE`, page props, revision table | `title`, `tags` from categories, `ext.mediawiki.display_title`, `contributors` from history |
 | **DokuWiki** | Page ID, first heading as title (optional), plugin metadata | `title`, `tags` from plugin, `created`/`updated` from changelog |
 | **Confluence** | Title, labels, content status, version, space | `title`, `tags`, `status`, `review`, `ext.confluence.space` |

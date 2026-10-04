@@ -19,7 +19,7 @@ review:
   at: "2026-06-01T09:00:00Z"
   revision: r0004
 license: CC-BY-SA-4.0
-summary: What happens when two people save the same page at once, and how engines reconcile it.
+description: What happens when two people save the same page at once, and how engines reconcile it.
 source: https://wiki.example.org/wiki/Edit_Conflicts
 ext:
   examplewiki:

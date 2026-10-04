@@ -8,7 +8,7 @@ updated: "2026-09-01T10:00:00Z"
 contributors:
   - {name: Aiko Tanaka, id: aiko}
 status: stable
-summary: Entry page of the example wiki used to illustrate the Portable Wiki Bundle.
+description: Entry page of the example wiki used to illustrate the Portable Wiki Bundle.
 source: https://wiki.example.org/wiki/Home
 ---
 

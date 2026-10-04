@@ -1,0 +1,35 @@
+# Self-assessment of the reference tooling against the Wiki Commons conformance profiles
+# (guidelines/16-Conformance_Profiles_and_Self_Assessment.md). Validated by tests/test_corpus_and_validator.py.
+format: wiki-commons-self-assessment
+version: "0.1"
+subject:
+  name: wiki-commons-tools
+  version: "0.2.0"
+  url: https://github.com/kos-commons/wiki-commons/tree/main/tools
+  kind: tool
+assessed_at: "2026-10-04"
+profiles:
+  bundle-exporter:
+    claim: partial
+    items:
+      XFER-1: {status: "yes", note: "manifest with conventions, contents, fidelity, and checksums"}
+      XFER-2: {status: "yes", note: "level 2 without git history, level 3 with it; degraded constructs listed from conversion notes"}
+      XFER-3: {status: "yes", note: "one file per page under pages/, title in frontmatter, ids stable or random, redirects and kinds carried from frontmatter"}
+      XFER-4: {status: "yes", note: "sidecar per attachment with media type, sha256, size, and alt text taken from the first image reference"}
+      XFER-5: {status: partial, note: "visibility only from a Logseq public:: property; file-based sources have no access model"}
+      XFER-6: {status: n/a, note: "source folders carry no interwiki map"}
+      XFER-7: {status: "yes", note: "git history replayed with full content per revision; renames recorded as events"}
+      XFER-8: {status: "yes", note: "contributor names only, never email addresses"}
+      XFER-9: {status: "no", note: "links.json is not generated"}
+      XFER-10: {status: n/a, note: "folders have no discussions"}
+      XFER-11: {status: "no", note: "no structured data export"}
+      XFER-12: {status: n/a, note: "file-based sources have no dynamic content to snapshot"}
+  bundle-importer:
+    claim: partial
+    items:
+      XFER-13: {status: partial, note: "degradation notes are returned by the API and printed by the CLI; no report page is written into the destination"}
+      XFER-14: {status: "no", note: "whole-bundle operations only; no incremental import"}
+      META-11: {status: "yes", note: "unknown frontmatter keys preserved; engine-specific keys kept under ext"}
+      LIC-4: {status: partial, note: "contributors and license travel with pages; no attribution notice is generated"}
+      LIC-5: {status: "no", note: "no license compatibility check"}
+      SEC-7: {status: partial, note: "paths are normalized and reads stay inside the source tree; archives are not handled and content is not sanitized"}

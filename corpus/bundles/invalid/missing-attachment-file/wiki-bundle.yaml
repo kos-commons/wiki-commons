@@ -1,0 +1,31 @@
+format: portable-wiki-bundle
+version: '0.1'
+generator:
+  name: corpus-authoring
+  version: 0.2.0
+exported_at: '2026-10-04T00:00:00Z'
+source:
+  name: Level 1 sample
+  engine: sample
+lang: en
+license: CC-BY-SA-4.0
+visibility_default: public
+markup:
+  profile: portable-wiki-markdown/2
+  link_label_order: target-first
+  hierarchy_separator: /
+  heading_anchor_algorithm: github
+  directives: []
+  html_subset: []
+contents:
+  pages: 1
+  attachments: 0
+  history: false
+  discussions: false
+  users: false
+  structured: false
+fidelity:
+  level: 1
+  degraded: []
+  dropped: []
+checksums: sha256sums.txt

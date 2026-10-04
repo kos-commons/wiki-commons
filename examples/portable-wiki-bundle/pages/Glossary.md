@@ -8,7 +8,7 @@ updated: "2025-11-20T07:30:00Z"
 contributors:
   - {name: Ben, id: ben}
 status: wip
-summary: Definitions of terms used across the wiki. Unfinished; additions welcome.
+description: Definitions of terms used across the wiki. Unfinished; additions welcome.
 ---
 
 > [!NOTE]

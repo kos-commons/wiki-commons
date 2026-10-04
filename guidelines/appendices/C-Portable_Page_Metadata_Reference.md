@@ -34,7 +34,7 @@ Types: `string`, `string[]` (list of strings), `datetime` (RFC 3339 string, or a
 | `source` | string | on export | URL of the page in the exporting wiki. | `source: https://wiki.example.org/wiki/Edit_Conflicts` |
 | `canonical` | string | optional | Preferred public URL if different from `source`. | |
 | `forked_from` | map | on forks | `site`, `page`, `revision`. | `forked_from: {site: https://a.example, page: Edit Conflicts, revision: r0410}` |
-| `summary` | string | encouraged | One or two sentences for previews and search. | |
+| `description` | string | encouraged | One or two sentences for previews and search. `summary` and `desc` are accepted as synonyms on import. | |
 | `related` | string[] | optional | Curated related pages kept outside the body. | `related: [Revision History, Soft Security]` |
 | `format` | string | when not Markdown | Media type of the body with parameters. | `format: "text/markdown; charset=UTF-8; variant=GFM"` |
 | `properties` | map | when structured data exists | Free-form structured data; page references as `[[Title]]` strings; dates as RFC 3339. | see §3 |
@@ -112,7 +112,7 @@ ext:
 | `title` | `dcterms:title` | `name`, `headline` | |
 | `aliases` | `dcterms:alternative` | `alternateName` | |
 | `id` | `dcterms:identifier` | `identifier` | |
-| `summary` | `dcterms:abstract` | `description`, `abstract` | |
+| `description` | `dcterms:abstract` | `description`, `abstract` | |
 | `tags` | `dcterms:subject` | `keywords` | |
 | `lang` | `dcterms:language` | `inLanguage` | |
 | `created` | `dcterms:created` | `dateCreated` | |
@@ -132,16 +132,16 @@ ext:
 
 | Engine | Native | Portable | Conversion notes |
 |---|---|---|---|
-| **Obsidian** | `tags`, `aliases`, `cssclasses`, custom keys; `publish`, `permalink`, `description` for Publish | `tags`, `aliases`; `cssclasses` → `ext.obsidian.cssclasses`; `description` → `summary`; `permalink` → `canonical`; custom → `properties` | Obsidian requires list values for `tags` and `aliases` since 1.9; singular keys `tag`, `alias` are legacy |
-| **Dendron** | `id`, `title`, `desc`, `created`, `updated` (epoch ms), `stub`, `nav_order`, `tags` | `id`, `title`, `summary`, `created`, `updated` (converted to RFC 3339), `status: draft` for stubs, `tags` | Hierarchy is the dotted file name → `pages/` path with `/` |
+| **Obsidian** | `tags`, `aliases`, `cssclasses`, custom keys; `publish`, `permalink`, `description` for Publish | `tags`, `aliases`; `cssclasses` → `ext.obsidian.cssclasses`; `description` → `description`; `permalink` → `ext.site.permalink`; custom → `properties` | Obsidian requires list values for `tags` and `aliases` since 1.9; singular keys `tag`, `alias` are legacy |
+| **Dendron** | `id`, `title`, `desc`, `created`, `updated` (epoch ms), `stub`, `nav_order`, `tags` | `id`, `title`, `description`, `created`, `updated` (converted to RFC 3339), `status: draft` for stubs, `tags` | Hierarchy is the dotted file name → `pages/` path with `/` |
 | **Logseq** | `title::`, `alias::`, `tags::`, `public::`, custom `key:: value` | `title`, `aliases`, `tags`, `visibility: public` when `public:: true`, custom → `properties` | Page properties live in the first block; block properties stay with blocks |
-| **Hugo** | `title`, `date`, `lastmod`, `tags`, `categories`, `draft`, `aliases`, `slug`, `description` | `title`, `created`, `updated`, `tags` (categories flattened), `status: draft`, `aliases`, `summary` | `slug` → file name; `canonical` from site base URL |
-| **Jekyll** | `title`, `date`, `tags`, `categories`, `permalink`, `published` | `title`, `created`, `tags`, `canonical`, `status: draft` when unpublished | |
+| **Hugo** | `title`, `date`, `lastmod`, `tags`, `categories`, `draft`, `aliases`, `slug`, `description` | `title`, `created`, `updated`, `tags` (categories flattened), `status: draft`, `aliases`, `description` | `slug` → file name; `canonical` from site base URL |
+| **Jekyll** | `title`, `date`, `tags`, `categories`, `permalink`, `published`, `description` | `title`, `created`, `tags`, `ext.site.permalink`, `status: draft` when unpublished, `description` | |
 | **Quartz** | Obsidian keys plus `publish`, `permalink`, `description`, `date` | as Obsidian; `date` → `created` | |
 | **MediaWiki** | page title, `page_id`, categories, `DISPLAYTITLE`, revision table, page props, redirects | `title`, `id: "mw:<page_id>"`, `tags` from categories, `ext.mediawiki.display_title`, `contributors` from revisions, `redirect` from `#REDIRECT` | Namespace prefix kept in `title`; listed in manifest `namespaces` |
 | **DokuWiki** | page ID, first heading (when `useheading`), changelog, plugin metadata | `title` (heading or ID), `created`/`updated` from changelog, `tags` from tag plugin | `:` → `/` |
 | **MoinMoin** | `#format`, `#language`, `#redirect`, Category links | `format`, `lang`, `redirect`, `tags` | |
-| **PmWiki** | `(:title:)`, `(:description:)`, `(:keywords:)`, group | `title`, `summary`, `tags` | group → path |
+| **PmWiki** | `(:title:)`, `(:description:)`, `(:keywords:)`, group | `title`, `description`, `tags` | group → path |
 | **TWiki / Foswiki** | topic name, `%META:TOPICINFO`, DataForm fields | `title`, `created`/`updated`/`contributors` from TOPICINFO, DataForm → `properties` with a generated schema | web → path |
 | **XWiki** | title, tags, XObjects, parent | `title`, `tags`, XObjects → `properties` with class schemas | |
 | **TiddlyWiki** | `title`, `tags`, `created`, `modified`, `modifier`, `type`, `list`, custom fields | `title`, `tags`, `created`, `updated`, `contributors` from `modifier`, `format` from `type`, custom → `properties` | Dates are compact `YYYYMMDDHHMMSSmmm` strings → RFC 3339 |
@@ -151,7 +151,7 @@ ext:
 | **Scrapbox / Cosense** | `title`, `id`, `created`, `updated`, line `userId`s | `title`, `id: "cosense:<id>"`, `created`, `updated`, `contributors` | |
 | **GROWI** | path, `_id`, tags, creator, last update user, frontmatter | `title` (last path segment), `id`, `tags`, `contributors`, frontmatter keys merged | |
 | **esa.io** | `name` with category path, `wip`, `tags`, `message`, revision number | `title` (last segment), path from category, `status: wip`, `tags` | |
-| **Outline OKF** | `type`, `title`, `description`, `resource`, `status`, `generated` | `kind`, `title`, `summary`, `status`, `ext.outline` | Index file maps to `pages/` structure |
+| **Open Knowledge Format** | `type`, `title`, `description`, `resource`, `tags`, `status`, `generated`, `verified`, `sources` | `kind` and `ext.okf.type`, `title`, `description`, `canonical`, `tags`, `status`, `updated` and `contributors`, `review`, `ext.okf.*` | See [Appendix G](G-Open_Knowledge_Format_Alignment.md) |
 | **Org-mode** | `#+TITLE`, `#+FILETAGS`, `#+LANGUAGE`, `:PROPERTIES:` drawer | `title`, `tags`, `lang`, `properties` | |
 
 ## 6. Examples
@@ -181,7 +181,7 @@ contributors:
   - {name: anonymous, kind: anonymous}
 status: stable
 license: CC-BY-SA-4.0
-summary: What happens when two people save the same page at once, and how engines reconcile it.
+description: What happens when two people save the same page at once, and how engines reconcile it.
 source: https://wiki.example.org/wiki/Edit_Conflicts
 ---
 ```
@@ -203,7 +203,7 @@ updated: "2025-01-10T12:00:00Z"
 ---
 title: Collaboration
 kind: category
-summary: Pages about how people work together on a wiki.
+description: Pages about how people work together on a wiki.
 ---
 
 Pages tagged *collaboration* describe the social machinery of a wiki.
@@ -215,7 +215,7 @@ Pages tagged *collaboration* describe the social machinery of a wiki.
 ---
 title: Decision Record
 kind: template
-summary: Starter content for architecture decision records.
+description: Starter content for architecture decision records.
 ---
 ```
 
@@ -252,7 +252,7 @@ about: Edit Conflicts
 | Boolean coercion | `status: no`, `tags: [yes]` | Quote |
 | Leading zeros and numbers | `id: 0123`, `title: 1.10` | Quote |
 | Colon in a value | `title: Note: on merging` | Quote |
-| Reserved first characters | `summary: #1 priority`, `title: *Star*` | Quote |
+| Reserved first characters | `description: #1 priority`, `title: *Star*` | Quote |
 | Multi-line strings | summaries with line breaks | Use `>` or `\|` block scalars |
 | Non-ASCII titles | `title: 編集の競合` | No quoting needed; ensure UTF-8 without BOM |
 | Tabs | YAML forbids tabs for indentation | Use spaces |

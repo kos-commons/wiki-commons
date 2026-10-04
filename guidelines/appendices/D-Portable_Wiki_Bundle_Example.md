@@ -58,7 +58,7 @@ The `contents` block tells the importer what to expect (eight pages, one attachm
 
 A plain Markdown viewer shows the list. An importer that knows `examplewiki`'s `children` macro may replace it with a live one.
 
-**`Edit Conflicts.md`** carries the fullest frontmatter: `id`, `aliases` (including the former title), `tags`, `lang` and `translations`, dates, `contributors` including an anonymous and a bot contributor, `status`, a `review` object, `license`, `summary`, `source`, and engine-specific data under `ext.examplewiki`. The body has a footnote, a same-page heading link (`[[#Merging|how merging works]]`), a dangling link (`[[Revision History]]`), an image with alternative text referenced relative to the page (`../attachments/conflict-diagram.svg`), a paragraph ending in a block identifier (`^conflict-ui`), and a block embed (`![[Glossary#^optimistic-concurrency]]`).
+**`Edit Conflicts.md`** carries the fullest frontmatter: `id`, `aliases` (including the former title), `tags`, `lang` and `translations`, dates, `contributors` including an anonymous and a bot contributor, `status`, a `review` object, `license`, `description`, `source`, and engine-specific data under `ext.examplewiki`. The body has a footnote, a same-page heading link (`[[#Merging|how merging works]]`), a dangling link (`[[Revision History]]`), an image with alternative text referenced relative to the page (`../attachments/conflict-diagram.svg`), a paragraph ending in a block identifier (`^conflict-ui`), and a block embed (`![[Glossary#^optimistic-concurrency]]`).
 
 **`Editing Collisions.md`** is a redirect: `kind: redirect`, `redirect: Edit Conflicts`, no body. The target page lists the old title in `aliases`, so an importer without redirects can fold the two.
 

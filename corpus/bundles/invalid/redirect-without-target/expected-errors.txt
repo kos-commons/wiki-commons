@@ -1,0 +1,1 @@
+kind is redirect but no redirect target

@@ -36,7 +36,7 @@ ROOT = Path(__file__).resolve().parent.parent
 BOOK = ROOT / "book"
 ROOT_FILES = ["README.md", "CONTRIBUTING.md", "CHANGELOG.md", "LICENSE"]
 TREES = ["guidelines", "schemas", "examples"]
-TOOL_FILES = ["tools/README.md", "tools/build_book.py", "tools/check_links.py", "tools/validate_bundle.py"]
+TOOL_FILES = ["tools/README.md", "tools/build_book.py", "tools/check_links.py", "tools/check_site.py", "tools/validate_bundle.py", "tools/wikicommons.py", "tools/wiki-commons.yaml"]
 BUNDLE_REL = Path("examples/portable-wiki-bundle")
 SUMMARY_LINK_RE = re.compile(r"\]\(([^)]+)\)")
 REPO_URL = "https://github.com/kos-commons/wiki-commons"
@@ -130,6 +130,8 @@ def main(argv: list[str]) -> int:
         shutil.copy2(ROOT / name, out / name)
     (out / "book").mkdir()
     shutil.copy2(BOOK / "README.md", out / "book" / "README.md")  # the "Building the site" page
+    (out / "corpus").mkdir()
+    shutil.copy2(ROOT / "corpus" / "README.md", out / "corpus" / "README.md")
 
     # examples: copy everything, adapting Markdown pages
     page_links: list[tuple[str, str]] = []

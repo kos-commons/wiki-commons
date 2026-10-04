@@ -40,6 +40,7 @@
 - [D · Portable Wiki Bundle Example](guidelines/appendices/D-Portable_Wiki_Bundle_Example.md)
 - [E · Glossary](guidelines/appendices/E-Glossary.md)
 - [F · References](guidelines/appendices/F-References.md)
+- [G · Open Knowledge Format Alignment](guidelines/appendices/G-Open_Knowledge_Format_Alignment.md)
 
 # Companion Material
 
@@ -54,6 +55,7 @@
   - [Template: Decision Record](examples/portable-wiki-bundle/pages/Templates/Decision-Record.md)
   - [ADR-001 Use Markdown](examples/portable-wiki-bundle/pages/Decisions/ADR-001-Use-Markdown.md)
 - [Tools](tools/index.md)
+- [Conformance Corpus](corpus/index.md)
 - [Building the site](book/index.md)
 - [Contributing](CONTRIBUTING.md)
 - [Changelog](CHANGELOG.md)

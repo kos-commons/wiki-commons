@@ -140,7 +140,7 @@ Converters and migration tools are not wikis but are central to the suite's purp
 - In the engine's documentation or repository: a `wiki-commons.yaml` self-assessment (below) and a sentence in the README such as "Follows the Wiki Commons guidelines 0.1: portable-content, living-history (partial)".
 - Operators of a deployment **may** declare profiles that depend on configuration (for example `trustworthy-operation`) separately from the engine's own claims.
 
-**How.** The self-assessment file lists each item of each claimed profile with a status and a note. Statuses: `yes`, `partial`, `planned`, `no`, `n/a`. A `no` or `partial` **should** carry a reason or a link to an issue. The file is advisory and human-readable first; its schema is `schemas/self-assessment.schema.json`.
+**How.** The self-assessment file lists each item of each claimed profile with a status and a note. The repository's own reference tooling publishes one at `tools/wiki-commons.yaml` (profiles `bundle-exporter` and `bundle-importer`, both claimed as partial). Statuses: `yes`, `partial`, `planned`, `no`, `n/a`. A `no` or `partial` **should** carry a reason or a link to an issue. The file is advisory and human-readable first; its schema is `schemas/self-assessment.schema.json`.
 
 ```yaml
 format: wiki-commons-self-assessment
@@ -153,21 +153,23 @@ subject:
 assessed_at: "2026-10-04"
 profiles:
   portable-content:
-    claim: yes
+    claim: "yes"
     items:
-      MKUP-1: {status: yes, note: "Markdown served as text/markdown; charset=UTF-8; variant=GFM; profile declared in manifest"}
-      MKUP-6: {status: yes, note: "target-first natively; label-first accepted on import when unambiguous"}
+      MKUP-1: {status: "yes", note: "Markdown served as text/markdown; charset=UTF-8; variant=GFM; profile declared in manifest"}
+      MKUP-6: {status: "yes", note: "target-first natively; label-first accepted on import when unambiguous"}
       MKUP-7: {status: partial, note: "native separator is ':'; mapped to '/' on export; import mapping planned", issue: "https://example.org/issues/812"}
-      META-2: {status: yes}
+      META-2: {status: "yes"}
       XFER-7: {status: n/a, note: "history is covered by the living-history claim"}
   living-history:
     claim: partial
     items:
-      HIST-12: {status: no, note: "no revision suppression; full deletion only"}
-      XFER-7: {status: yes, note: "full content per revision; patches not used"}
+      HIST-12: {status: "no", note: "no revision suppression; full deletion only"}
+      XFER-7: {status: "yes", note: "full content per revision; patches not used"}
   connected-wiki:
     claim: planned
 ```
+
+Quote `"yes"` and `"no"`: unquoted, YAML 1.1 parsers read them as booleans, which is the first pitfall listed in [Appendix C](appendices/C-Portable_Page_Metadata_Reference.md#7-yaml-pitfalls).
 
 ## 4. Guidance for claimants
 

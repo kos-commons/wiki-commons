@@ -133,7 +133,7 @@ Terms are defined as used in this suite. Engine-specific synonyms are listed so 
 
 **Open Definition.** The Open Knowledge Foundation's criteria for open licenses and content; CC0, CC BY, and CC BY-SA conform, NC and ND variants do not. → [Chapter 15](../15-Licensing_and_Attribution.md)
 
-**Open Knowledge Format (OKF).** Outline's 2026 Markdown bundle export format; a sibling of the Portable Wiki Bundle. → [Chapter 10 §5](../10-Interchange_and_Portability.md#5-relationship-to-existing-export-formats)
+**Open Knowledge Format (OKF).** Google Cloud's 2026 specification for directories of Markdown concept documents with YAML frontmatter, `index.md` listings, and `log.md` histories; Outline exports it. A sibling of the Portable Wiki Bundle. → [Appendix G](G-Open_Knowledge_Format_Alignment.md)
 
 **OpenAPI.** The specification language for describing HTTP APIs; recommended for REST APIs. → [API-1](../11-APIs_and_Discovery.md)
 

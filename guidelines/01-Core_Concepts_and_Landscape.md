@@ -139,7 +139,7 @@ Wikis get their power from extension, and extension is bound to a host language 
 
 ## 8. Incentives, lock-in, and the counter-trend
 
-Open-source engines gain users when content can move; proprietary platforms, especially hosted ones, gain revenue when it cannot. The report's observation stands: commercial incentives for portability are weak. Two things soften it. Regulation increasingly treats data portability as a right. And the market has begun to reward openness: Obsidian built a large following on "file over app"; Outline shipped an open Markdown bundle format in 2026; BookStack documents a portable archive; GitBook and others serve every page as Markdown for machine consumption; Anytype publishes its block protocol. Guidelines cannot create incentives, but they can lower the cost of acting on the ones that exist, and they can give users a vocabulary for asking.
+Open-source engines gain users when content can move; proprietary platforms, especially hosted ones, gain revenue when it cannot. The report's observation stands: commercial incentives for portability are weak. Two things soften it. Regulation increasingly treats data portability as a right. And the market has begun to reward openness: Obsidian built a large following on "file over app"; Google Cloud published the Open Knowledge Format in 2026 and Outline shipped an export for it within months; BookStack documents a portable archive; GitBook and others serve every page as Markdown for machine consumption; Anytype publishes its block protocol. Guidelines cannot create incentives, but they can lower the cost of acting on the ones that exist, and they can give users a vocabulary for asking.
 
 ## 9. Lessons from earlier standardization attempts
 

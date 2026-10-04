@@ -1,0 +1,3 @@
+frontmatter.tags: expected type array
+frontmatter.visibility: 'secret' is not one of
+frontmatter.lang

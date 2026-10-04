@@ -37,6 +37,7 @@ Versions and dates were checked against primary sources (specification home page
 - **Notion API block object**. https://developers.notion.com/reference/block
 - **Portable Text** (Sanity). https://github.com/portabletext/portabletext
 - **ProseMirror document model**. https://prosemirror.net/docs/guide/#doc
+- **Open Knowledge Format (OKF)**, version 0.2, Google Cloud, 2026 (0.1 published June 2026). Canonical repository: https://github.com/GoogleCloudPlatform/open-knowledge-format (specification in `SPEC.md`; an earlier frozen copy lives under `okf/` in `GoogleCloudPlatform/knowledge-catalog`). Outline's OKF export shipped in Outline 1.10.1 (September 2026). See [Appendix G](G-Open_Knowledge_Format_Alignment.md).
 
 ### Metadata and identifiers
 

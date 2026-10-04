@@ -13,14 +13,15 @@ Version 0.1 is a complete first statement of the guidelines. Before anyone shoul
 
 ### 1.1 Near-term work
 
-1. **A conformance corpus.** Sample pages exercising every construct of the Portable Wiki Markdown profile, with expected degraded renderings and expected link resolutions; sample bundles of each fidelity level; adversarial cases (ambiguous titles, non-Latin anchors, nested envelopes, label-order traps). Engines and converters test against the corpus; the corpus grows from their failures. This is the single most valuable next artifact.
-2. **Reference tooling.** A bundle validator built on the JSON Schemas in `schemas/`; a linter for the Markdown profile; an import-report generator; conversion filters for common toolchains (a remark plugin set and Pandoc filters that read and write the profile, including label-order flipping and separator mapping).
+1. **A conformance corpus.** *Started in 0.2:* `corpus/` holds markup cases (every profile construct, both label orders, code and escapes, prefixes, embeds, block identifiers, anchors, tags, callouts, directives, envelopes, frontmatter pitfalls, non-Latin titles, Logseq, Obsidian, and Dendron sources, conversions to Dendron, Gollum, Logseq, and static Markdown), resolution cases for the MKUP-5 order, and valid and invalid bundles at fidelity levels 0 to 3 ([corpus/README.md](../corpus/README.md)). It needs cases contributed from real engine disagreements, and expected renderings remain out of its reach.
+2. **Reference tooling.** *Started in 0.2:* `tools/wikicommons.py` scans the profile, converts between the portable, Obsidian, Foam, Dendron, Logseq, Gollum, and static-site dialects, resolves links, builds bundles from folders and git-backed vaults (with history), writes bundles back out, and converts to and from the Open Knowledge Format; `tools/validate_bundle.py` validates bundles. Still open: a remark plugin and Pandoc filters so that JavaScript and Pandoc toolchains read and write the profile natively; an import-report writer; a linter with suggestions.
 3. **Engine profiles.** Appendix A should grow by contribution from engine maintainers, who know their engines better than any survey. A template is in [CONTRIBUTING](../CONTRIBUTING.md).
-4. **Alignment with neighbouring formats.** Outline's Open Knowledge Format (2026), BookStack's Portable ZIP, MediaWiki's XML dump schema, Obsidian's conventions, TiddlyWiki's JSON, Federated Wiki's page JSON, and Scrapbox / Cosense's JSON export all overlap with the bundle. The goal is not to replace any of them but to agree on the shared parts (frontmatter keys, link forms, history records) so that converters are small. Conversations with those maintainers are the next step.
+4. **Alignment with neighbouring formats.** *Started in 0.2:* [Appendix G](appendices/G-Open_Knowledge_Format_Alignment.md) maps the Open Knowledge Format onto the bundle and the tooling converts both ways; `description` replaced `summary` and the OKF actor convention is used on export. Still open: BookStack's Portable ZIP, MediaWiki's XML dump schema, Obsidian's conventions, TiddlyWiki's JSON, Federated Wiki's page JSON, and Scrapbox / Cosense's JSON export, each of which overlaps with the bundle. The goal is not to replace any of them but to agree on the shared parts so that converters are small. Conversations with those maintainers are the next step.
 5. **A directive registry.** The common directive vocabulary of [EXT-10](12-Extensibility_Macros_and_Dynamic_Content.md) as a maintained file with names, attributes, meanings, degradations, and known native equivalents.
 6. **An interwiki registry.** A machine-readable list of common prefixes and URL templates that engines can ship as defaults ([NAV-13](04-Discovery_Navigation_and_Topology.md#nav-13--interwiki-links)), descended from the community InterMap lists of the early 2000s.
-7. **Self-assessment registry.** A place where engines and tools publish their `wiki-commons.yaml` files ([Chapter 16](16-Conformance_Profiles_and_Self_Assessment.md)), so that users can compare claims.
-8. **Translation of the suite.** A Japanese translation first, given the history of wiki engines in Japan and the contributors to this draft; other languages as volunteers appear. The suite should itself be a multilingual wiki eventually.
+7. **Self-assessment registry.** A place where engines and tools publish their `wiki-commons.yaml` files ([Chapter 16](16-Conformance_Profiles_and_Self_Assessment.md)), so that users can compare claims. The reference tooling publishes its own at `tools/wiki-commons.yaml`.
+
+The suite is written and maintained in English; translations are not planned.
 
 ### 1.2 Toward 1.0
 
@@ -79,7 +80,7 @@ Observations from the landscape survey that will shape future versions:
 - **Convergence on a Markdown dialect** led by file-based note tools, now read by static publishers, code-editor extensions, and some wikis. The profile in Chapter 08 rides this wave rather than fighting it.
 - **Convergence on Yjs-style CRDTs** for real-time editing across otherwise unrelated engines, which makes [HIST-10](06-Temporal_Design_and_Revision_History.md#hist-10--real-time-co-editing-with-durable-history) a widely shared concern.
 - **Two portability postures** side by side: files as the database, and CRDT state with a Markdown convenience copy. Both can produce bundles; only the first *is* a bundle. The guidelines should keep serving both.
-- **Open formats from vendors**: JSON Canvas, Obsidian's `.base`, Outline's Open Knowledge Format, Anytype's block protocol, BookStack's portable archive. Each is a potential ally for interchange.
+- **Open formats from vendors and platforms**: JSON Canvas, Obsidian's `.base`, Google Cloud's Open Knowledge Format (already exported by Outline), Anytype's block protocol, BookStack's portable archive. Each is a potential ally for interchange.
 - **Agent interfaces** (Model Context Protocol servers, agent command-line tools, machine-readable site indexes) are becoming a standard way to reach a wiki's content. They raise the stakes for attribution and provenance ([AUTH-14](05-Authoring_and_Participation.md#auth-14--machine-assistance-human-authorship)) and reward engines with clear page, history, and search operations.
 - **Regulatory pressure** on accessibility and data portability continues to rise, which gives operators reasons to ask for the profiles in Chapter 16.
 - **The classic engines are alive.** New releases in 2026 from MediaWiki, DokuWiki, PmWiki, Foswiki, ikiwiki, Gitit, JSPWiki, TiddlyWiki, Federated Wiki, and Zim mean that any guideline ignoring them would be ignoring a large part of the world's wikis.
@@ -90,7 +91,7 @@ Observations from the landscape survey that will shape future versions:
 - Add or correct an engine profile in [Appendix A](appendices/A-Wiki_Engine_Landscape.md).
 - Propose a pattern you see in the wild that Part II lacks, with evidence.
 - Argue with a leaning above; the questions are open because the answers are not.
-- Translate.
+- Run `tools/wikicommons.py bundle` on your own vault or wiki export and report what came out wrong.
 
 See [CONTRIBUTING](../CONTRIBUTING.md) for the process.
 

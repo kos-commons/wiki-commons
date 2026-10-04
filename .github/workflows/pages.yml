@@ -39,6 +39,12 @@ jobs:
       - name: Validate the example Portable Wiki Bundle
         run: python tools/validate_bundle.py examples/portable-wiki-bundle
 
+      - name: Run the test suite
+        run: python -m unittest discover -s tests -v
+
+      - name: Run the conformance corpus
+        run: python tools/wikicommons.py corpus check
+
       - name: Install mdBook ${{ env.MDBOOK_VERSION }}
         run: |
           mkdir -p "$HOME/.local/bin"

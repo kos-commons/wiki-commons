@@ -148,9 +148,12 @@ guidelines/
     D-Portable_Wiki_Bundle_Example.md
     E-Glossary.md
     F-References.md
+    G-Open_Knowledge_Format_Alignment.md
 schemas/          machine-readable JSON Schemas for metadata and manifests
 examples/         a small, complete Portable Wiki Bundle
-tools/            bundle validator, link checkers, and the site assembly script
+corpus/           conformance corpus with reviewed expectations
+tools/            reference tooling: scanner, converters, bundle build and unbundle, OKF interchange, validator
+tests/            unit and round-trip tests
 book/             mdBook configuration for the published site
 ```
 
