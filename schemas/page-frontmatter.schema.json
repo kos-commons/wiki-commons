@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/kos-commons/wiki-commons/main/schemas/page-frontmatter.schema.json",
+  "title": "Portable Page Metadata (frontmatter)",
+  "description": "Frontmatter vocabulary for a page in the Portable Wiki Markdown profile. See guidelines/09-Metadata_and_Frontmatter.md and Appendix C. Deliberately permissive: known keys are type-checked, unknown keys are allowed and should be preserved.",
+  "type": "object",
+  "properties": {
+    "title": {"type": "string", "minLength": 1, "description": "Human-readable title; the primary address."},
+    "id": {"type": "string", "minLength": 1, "description": "Stable identifier surviving renames. UUID recommended; engine identifiers prefixed with a scheme, e.g. mw:20481."},
+    "aliases": {"type": "array", "items": {"type": "string"}, "description": "Other titles that resolve to this page, including former titles."},
+    "redirect": {"type": "string", "description": "Target title or path when this page exists only to redirect."},
+    "tags": {"type": "array", "items": {"type": "string"}, "description": "Free-form labels; hierarchy flattened as parent/child."},
+    "kind": {"type": "string", "description": "page (default), category, template, help, system, discussion, user, redirect; other values allowed.", "examples": ["page", "category", "template", "help", "system", "discussion", "user", "redirect"]},
+    "lang": {"type": "string", "pattern": "^[A-Za-z]{2,3}(-[A-Za-z0-9]{1,8})*$", "description": "BCP 47 language tag."},
+    "translations": {"type": "object", "additionalProperties": {"type": "string"}, "description": "Map of BCP 47 tag to page path or title."},
+    "created": {"$ref": "#/$defs/datetime"},
+    "updated": {"$ref": "#/$defs/datetime"},
+    "contributors": {"type": "array", "items": {"$ref": "#/$defs/person"}},
+    "maintainers": {"type": "array", "items": {"$ref": "#/$defs/person"}},
+    "status": {"type": "string", "description": "draft, wip, stable, deprecated, archived, deleted; other values allowed and preserved.", "examples": ["draft", "wip", "stable", "deprecated", "archived", "deleted"]},
+    "review": {
+      "type": "object",
+      "properties": {
+        "state": {"type": "string", "examples": ["none", "pending", "reviewed", "verified", "rejected"]},
+        "by": {"type": "string"},
+        "at": {"$ref": "#/$defs/datetime"},
+        "revision": {"type": "string"}
+      },
+      "additionalProperties": true
+    },
+    "visibility": {"type": "string", "enum": ["public", "internal", "restricted"], "description": "Advisory signal for importers; not an access-control model."},
+    "license": {"type": "string", "description": "SPDX identifier or expression, or a URL."},
+    "source": {"type": "string", "format": "uri", "description": "URL of the page in the exporting wiki."},
+    "canonical": {"type": "string", "format": "uri"},
+    "forked_from": {
+      "type": "object",
+      "properties": {"site": {"type": "string"}, "page": {"type": "string"}, "revision": {"type": "string"}},
+      "additionalProperties": true
+    },
+    "summary": {"type": "string"},
+    "related": {"type": "array", "items": {"type": "string"}},
+    "format": {"type": "string", "description": "Media type of the body, e.g. text/markdown; charset=UTF-8; variant=GFM."},
+    "properties": {"type": "object", "description": "Free-form structured data. Page references as [[Title]] strings; dates as RFC 3339."},
+    "schema": {"type": "string", "description": "URL or bundle path of a JSON Schema describing properties."},
+    "about": {"type": "string", "description": "Subject page of a kind: discussion page."},
+    "ext": {"type": "object", "additionalProperties": {"type": "object"}, "description": "Engine-specific data namespaced by engine name."}
+  },
+  "additionalProperties": true,
+  "$defs": {
+    "datetime": {
+      "type": "string",
+      "description": "RFC 3339 timestamp with offset or Z, or a bare YYYY-MM-DD date.",
+      "anyOf": [{"format": "date-time"}, {"format": "date"}]
+    },
+    "person": {
+      "anyOf": [
+        {"type": "string", "minLength": 1},
+        {
+          "type": "object",
+          "properties": {
+            "name": {"type": "string"},
+            "id": {"type": "string"},
+            "url": {"type": "string", "format": "uri"},
+            "role": {"type": "string", "examples": ["author", "maintainer", "translator", "reviewer", "bot"]},
+            "kind": {"type": "string", "enum": ["person", "bot", "group", "anonymous"]}
+          },
+          "additionalProperties": true
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,57 @@
+# Portable Wiki Bundle manifest. See guidelines/10-Interchange_and_Portability.md (XFER-1).
+format: portable-wiki-bundle
+version: "0.1"
+generator:
+  name: ExampleWiki
+  version: "4.2.0"
+  url: https://example.org/examplewiki
+exported_at: "2026-10-04T02:00:00Z"
+source:
+  name: Example Project Wiki
+  url: https://wiki.example.org/
+  engine: examplewiki
+  engine_version: "4.2.0"
+lang: en
+license: CC-BY-SA-4.0
+visibility_default: public
+markup:
+  profile: portable-wiki-markdown/2
+  native_format: "text/markdown; charset=UTF-8; variant=GFM"
+  link_label_order: target-first
+  hierarchy_separator: "/"
+  native_hierarchy_separator: ":"
+  heading_anchor_algorithm: github
+  directives: [toc, children]
+  html_subset: [sub, sup]
+namespaces: [Talk, User]
+interwiki:
+  wikipedia: "https://en.wikipedia.org/wiki/{title}"
+  wp: "https://en.wikipedia.org/wiki/{title}"
+  jawp: "https://ja.wikipedia.org/wiki/{title}"
+contents:
+  pages: 8
+  attachments: 1
+  history: true
+  discussions: true
+  discussions_representation: jsonl
+  users: true
+  structured: true
+fidelity:
+  level: 5
+  degraded:
+    - construct: "children macro"
+      count: 1
+      how: "snapshotted with a wiki:snapshot envelope on Home"
+    - construct: "parameterized template Decision Record"
+      count: 1
+      how: "expanded in place; template page included under Templates/ with kind: template"
+  dropped:
+    - construct: "per-namespace access control lists"
+      how: "replaced by the visibility field; all exported pages are public"
+extensions_used:
+  - name: examplewiki-children
+    version: "1.0"
+    directives: [children]
+pseudonymized: false
+checksums: sha256sums.txt
+conformance: [portable-content@0.1, living-history@0.1, open-collaboration@0.1]

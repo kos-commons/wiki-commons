@@ -1,0 +1,6 @@
+{
+  "optimistic-concurrency": "pages/Glossary.md",
+  "base-revision": "pages/Glossary.md",
+  "revision": "pages/Glossary.md",
+  "conflict-ui": "pages/Edit Conflicts.md"
+}

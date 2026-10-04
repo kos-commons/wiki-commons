@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/kos-commons/wiki-commons/main/schemas/discussion-record.schema.json",
+  "title": "Portable discussion record",
+  "description": "One line of a discussions/<page-id>.jsonl file: a comment or annotation. Anchors follow the W3C Web Annotation selector vocabulary. See XFER-10.",
+  "type": "object",
+  "required": ["id", "at"],
+  "properties": {
+    "id": {"type": "string", "minLength": 1},
+    "parent": {"type": ["string", "null"]},
+    "at": {"type": "string", "format": "date-time"},
+    "edited_at": {"type": "string", "format": "date-time"},
+    "author": {"$ref": "history-record.schema.json#/$defs/author"},
+    "body": {"type": "string", "description": "Markdown in the portable profile."},
+    "resolved": {"type": "boolean"},
+    "anchor": {
+      "type": "object",
+      "properties": {
+        "type": {"type": "string", "examples": ["TextQuoteSelector", "TextPositionSelector", "FragmentSelector"]},
+        "exact": {"type": "string"},
+        "prefix": {"type": "string"},
+        "suffix": {"type": "string"},
+        "start": {"type": "integer", "minimum": 0},
+        "end": {"type": "integer", "minimum": 0},
+        "value": {"type": "string"},
+        "revision": {"type": "string", "description": "Revision the anchor was made against."}
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": true
+}

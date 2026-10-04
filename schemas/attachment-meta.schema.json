@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/kos-commons/wiki-commons/main/schemas/attachment-meta.schema.json",
+  "title": "Attachment metadata (sidecar)",
+  "description": "Metadata for one attachment, as <name>.meta.yaml beside the file or as an entry in attachments.yaml. See XFER-4.",
+  "type": "object",
+  "required": ["filename"],
+  "properties": {
+    "filename": {"type": "string"},
+    "original_filename": {"type": "string"},
+    "media_type": {"type": "string"},
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "size": {"type": "integer", "minimum": 0},
+    "width": {"type": "integer", "minimum": 0},
+    "height": {"type": "integer", "minimum": 0},
+    "alt": {"type": "string", "description": "Default alternative text."},
+    "caption": {"type": "string"},
+    "license": {"type": "string", "description": "SPDX identifier or URL."},
+    "attribution": {"type": "string"},
+    "source": {"type": "string", "format": "uri"},
+    "uploaded_by": {"type": "string"},
+    "uploaded_at": {"type": "string", "format": "date-time"}
+  },
+  "additionalProperties": true
+}

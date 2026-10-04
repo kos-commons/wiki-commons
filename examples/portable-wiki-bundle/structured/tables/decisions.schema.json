@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "decisions.csv columns",
+  "description": "Column types for structured/tables/decisions.csv. Columns typed as page-reference hold [[Title]] strings.",
+  "type": "object",
+  "properties": {
+    "adr_number": {"type": "integer"},
+    "title": {"type": "string"},
+    "decision_status": {"type": "string"},
+    "decided_on": {"type": "string", "format": "date"},
+    "page": {"type": "string", "x-column-kind": "page-reference"}
+  }
+}

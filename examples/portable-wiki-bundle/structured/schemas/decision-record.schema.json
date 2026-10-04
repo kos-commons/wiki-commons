@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Decision record properties",
+  "description": "Shape of the `properties` object on pages created from the Decision Record template.",
+  "type": "object",
+  "properties": {
+    "adr_number": {"type": "integer", "minimum": 1},
+    "decision_status": {"type": "string", "enum": ["proposed", "accepted", "deprecated", "superseded"]},
+    "deciders": {"type": "array", "items": {"type": "string", "description": "Page reference written as [[Title]]"}},
+    "decided_on": {"type": "string", "format": "date"},
+    "supersedes": {"type": "string", "description": "Page reference written as [[Title]]"}
+  },
+  "required": ["adr_number", "decision_status"],
+  "additionalProperties": true
+}

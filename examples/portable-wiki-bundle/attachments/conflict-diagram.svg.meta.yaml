@@ -1,0 +1,10 @@
+filename: conflict-diagram.svg
+media_type: image/svg+xml
+sha256: 1cc4b98b30be8457a0e78cb7b09568f9d53737eb838f9098e585a61bc1906a53
+size: 1253
+alt: "Sequence diagram of two editors saving changes to the same page"
+license: CC-BY-4.0
+attribution: "Aiko Tanaka"
+source: https://wiki.example.org/attachments/conflict-diagram.svg
+uploaded_by: aiko
+uploaded_at: "2024-03-02T10:20:00+09:00"

@@ -1,0 +1,3 @@
+{"id":"c1","parent":null,"at":"2026-02-01T10:00:00Z","author":{"id":"aiko","name":"Aiko Tanaka"},"body":"Should we mention three-way merge here?","resolved":true}
+{"id":"c2","parent":"c1","at":"2026-02-01T11:30:00Z","author":{"id":"ben","name":"Ben"},"body":"Yes, added under [[Edit Conflicts#Merging]].","resolved":true}
+{"id":"c3","parent":null,"at":"2026-03-10T09:00:00Z","author":{"id":"ben","name":"Ben"},"body":"This sentence is unclear to newcomers.","anchor":{"type":"TextQuoteSelector","exact":"based on the same earlier revision","prefix":"same page\n","suffix":".[^1]","revision":"r0004"},"resolved":false}

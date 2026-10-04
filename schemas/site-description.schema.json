@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/kos-commons/wiki-commons/main/schemas/site-description.schema.json",
+  "title": "Wiki site description document",
+  "description": "A small JSON document, discoverable from any page with <link rel=\"describedby\">, describing a wiki's name, engine, formats, APIs, feeds, interwiki map, and declared profiles. See API-1.",
+  "type": "object",
+  "required": ["format", "version", "name", "url"],
+  "properties": {
+    "format": {"const": "wiki-site-description"},
+    "version": {"type": "string"},
+    "name": {"type": "string"},
+    "url": {"type": "string", "format": "uri"},
+    "engine": {"type": "object", "properties": {"name": {"type": "string"}, "version": {"type": "string"}, "url": {"type": "string", "format": "uri"}}, "additionalProperties": true},
+    "lang": {"type": "array", "items": {"type": "string"}},
+    "license": {"type": "string"},
+    "markup": {"type": "object", "properties": {"profile": {"type": "string"}, "native_format": {"type": "string"}, "link_label_order": {"type": "string", "enum": ["target-first", "label-first"]}}, "additionalProperties": true},
+    "api": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["kind", "root"],
+        "properties": {
+          "kind": {"type": "string", "examples": ["rest", "graphql", "jsonrpc", "xmlrpc", "mcp", "other"]},
+          "root": {"type": "string", "format": "uri"},
+          "description": {"type": "string", "format": "uri", "description": "Machine-readable description (OpenAPI, GraphQL schema)."},
+          "documentation": {"type": "string", "format": "uri"}
+        },
+        "additionalProperties": true
+      }
+    },
+    "page_source": {"type": "string", "description": "URL template for a page's raw source, e.g. https://wiki.example.org/raw/{path}."},
+    "feeds": {"type": "object", "additionalProperties": {"type": "string", "format": "uri"}},
+    "search": {"type": "string", "format": "uri", "description": "OpenSearch description document."},
+    "sitemap": {"type": "string", "format": "uri"},
+    "interwiki": {"type": "object", "additionalProperties": {"type": "string"}},
+    "export": {"type": "object", "properties": {"bundle": {"type": "string", "format": "uri"}}, "additionalProperties": true},
+    "conformance": {"type": "array", "items": {"type": "string"}}
+  },
+  "additionalProperties": true
+}

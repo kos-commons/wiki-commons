@@ -1,0 +1,18 @@
+# Contributor directory. No email addresses; see PRIV-3 and XFER-8.
+- id: aiko
+  name: Aiko Tanaka
+  kind: person
+  url: https://wiki.example.org/wiki/User:Aiko
+- id: ben
+  name: Ben
+  kind: person
+  url: https://wiki.example.org/wiki/User:Ben
+- id: bot-linkfix
+  name: LinkFix bot
+  kind: bot
+- id: mallory
+  name: mallory
+  kind: person
+- id: oversight
+  name: Oversight team
+  kind: group

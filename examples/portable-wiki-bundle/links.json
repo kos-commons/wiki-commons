@@ -1,0 +1,18 @@
+[
+  {"from": "pages/Home.md", "to": "pages/Edit Conflicts.md", "kind": "link", "resolved": true},
+  {"from": "pages/Home.md", "to": "pages/Glossary.md", "kind": "link", "resolved": true},
+  {"from": "pages/Home.md", "to": "pages/Decisions/ADR-001 Use Markdown.md", "kind": "link", "resolved": true},
+  {"from": "pages/Home.md", "to": "pages/編集の競合.md", "kind": "link", "resolved": true},
+  {"from": "pages/Home.md", "to": "Merge Strategies", "kind": "link", "resolved": false},
+  {"from": "pages/Home.md", "to": "wikipedia:Wiki", "kind": "interwiki", "resolved": true},
+  {"from": "pages/Home.md", "to": "pages/Category/Collaboration.md", "kind": "link", "resolved": true},
+  {"from": "pages/Edit Conflicts.md", "to": "Revision History", "kind": "link", "resolved": false},
+  {"from": "pages/Edit Conflicts.md", "to": "pages/Glossary.md", "kind": "embed", "resolved": true},
+  {"from": "pages/Edit Conflicts.md", "to": "pages/Glossary.md", "kind": "link", "resolved": true},
+  {"from": "pages/Edit Conflicts.md", "to": "attachments/conflict-diagram.svg", "kind": "attachment", "resolved": true},
+  {"from": "pages/Edit Conflicts.md", "to": "wikipedia:Edit conflict", "kind": "interwiki", "resolved": true},
+  {"from": "pages/Editing Collisions.md", "to": "pages/Edit Conflicts.md", "kind": "redirect", "resolved": true},
+  {"from": "pages/編集の競合.md", "to": "pages/Edit Conflicts.md", "kind": "link", "resolved": true},
+  {"from": "pages/編集の競合.md", "to": "pages/Glossary.md", "kind": "link", "resolved": true},
+  {"from": "pages/編集の競合.md", "to": "jawp:編集競合", "kind": "interwiki", "resolved": true}
+]
