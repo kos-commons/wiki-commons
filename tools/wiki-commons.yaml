@@ -4,7 +4,7 @@ format: wiki-commons-self-assessment
 version: "0.1"
 subject:
   name: wiki-commons-tools
-  version: "0.3.0"
+  version: "0.4.0"
   url: https://github.com/kos-commons/wiki-commons/tree/main/tools
   kind: tool
 assessed_at: "2026-10-05"

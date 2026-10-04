@@ -1,11 +1,11 @@
 # 06 · Temporal Design and Revision History
 
-> **Part II — The Pattern Language** · **Status:** Working Draft 0.1 (October 2026)
+> **Part II — The Pattern Language** · **Status:** Working Draft 0.4 (October 2026)
 > Previous: [05 · Authoring and Participation](05-Authoring_and_Participation.md) · Next: [07 · Collaboration, Awareness and Governance](07-Collaboration_Awareness_and_Governance.md)
 
 **In one sentence:** A wiki page is not a document but a *history*: these twelve patterns keep that history whole, legible, attributable, and forgiving, from the classic revision list to real-time co-editing and the rare case where something must be hidden without being erased.
 
-The pattern format is explained in [03 · Pattern Language Overview](03-Pattern_Language_Overview.md#2-pattern-format). The portable representation of history is defined in [10 · Interchange and Portability](10-Interchange_and_Portability.md).
+The pattern format is explained in [03 · Pattern Language Overview](03-Pattern_Language_Overview.md#2-pattern-format). Only the **Guidance** field of each pattern carries guidance, in the vocabulary of [00 §4](00-Overview_and_Vision.md#4-guidance-language); *Context*, *Tension*, *Observed in*, and *Interchange* explain and give evidence. The portable representation of history is defined in [10 · Interchange and Portability](10-Interchange_and_Portability.md).
 
 ---
 

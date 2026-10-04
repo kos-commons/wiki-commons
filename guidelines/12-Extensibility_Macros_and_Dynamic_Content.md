@@ -1,11 +1,11 @@
 # 12 · Extensibility, Macros and Dynamic Content
 
-> **Part III — Interoperability Guidelines** · **Status:** Working Draft 0.1 (October 2026)
+> **Part III — Interoperability Guidelines** · **Status:** Working Draft 0.4 (October 2026)
 > Previous: [11 · APIs and Discovery](11-APIs_and_Discovery.md) · Next: [13 · Accessibility, Internationalization and Web Standards](13-Accessibility_Internationalization_and_Web_Standards.md)
 
 **In one sentence:** Macros, templates, queries, scripts, and plugins are where wikis get their power and where portability goes to die; these guidelines do not try to standardize what extensions *do*, only how they *announce themselves*, how they *degrade*, and how their output *travels*.
 
-Recommendations in this chapter carry the prefix `EXT-`.
+Recommendations in this chapter carry the prefix `EXT-`. The numbered recommendations are the guidance of this chapter ([00 §4](00-Overview_and_Vision.md#4-guidance-language)); the surrounding sections explain, give evidence, and add no obligations.
 
 ---
 

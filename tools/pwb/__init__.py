@@ -10,9 +10,10 @@ Modules:
   mediawiki MediaWiki XML dump interchange
   external optional Pandoc bridge for formats the built-in code does not cover
   report   import and export reports (XFER-13)
+  lint     a linter with suggestions (AUTH-13): never blocking, safe fixes on request
   corpus   run the conformance corpus
   cli      command-line interface (see tools/wikicommons.py)
 
 Standard library only, plus PyYAML for YAML files.
 """
-__version__ = "0.3.0"
+__version__ = "0.4.0"

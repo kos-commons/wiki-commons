@@ -1,6 +1,6 @@
 # Appendix G · Open Knowledge Format Alignment
 
-> **Appendices** · **Status:** Working Draft 0.2 (October 2026)
+> **Appendices** · **Status:** Working Draft 0.4 (October 2026)
 > Previous: [F · References](F-References.md) · Index: [README](../../README.md)
 
 **In one sentence:** The Open Knowledge Format (OKF) and the Portable Wiki Bundle are both "a directory of Markdown files with YAML frontmatter", built for different purposes; this appendix maps one onto the other field by field, records the choices made to keep them close, and describes the converter that implements the mapping.

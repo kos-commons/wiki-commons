@@ -1,11 +1,11 @@
 # 05 · Authoring and Participation
 
-> **Part II — The Pattern Language** · **Status:** Working Draft 0.1 (October 2026)
+> **Part II — The Pattern Language** · **Status:** Working Draft 0.4 (October 2026)
 > Previous: [04 · Discovery, Navigation and Topology](04-Discovery_Navigation_and_Topology.md) · Next: [06 · Temporal Design and Revision History](06-Temporal_Design_and_Revision_History.md)
 
 **In one sentence:** These fourteen patterns lower the barrier between reading and writing: they make editing one step away, let people choose how they write, welcome half-finished work, protect drafts, and keep the author human even when machines help.
 
-The pattern format is explained in [03 · Pattern Language Overview](03-Pattern_Language_Overview.md#2-pattern-format).
+The pattern format is explained in [03 · Pattern Language Overview](03-Pattern_Language_Overview.md#2-pattern-format). Only the **Guidance** field of each pattern carries guidance, in the vocabulary of [00 §4](00-Overview_and_Vision.md#4-guidance-language); *Context*, *Tension*, *Observed in*, and *Interchange* explain and give evidence.
 
 ---
 

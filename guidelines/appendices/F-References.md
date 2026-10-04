@@ -1,6 +1,6 @@
 # Appendix F · References
 
-> **Appendices** · **Status:** Working Draft 0.1 (October 2026)
+> **Appendices** · **Status:** Working Draft 0.4 (October 2026)
 > Previous: [E · Glossary](E-Glossary.md) · Index: [README](../../README.md)
 
 Versions and dates were checked against primary sources (specification home pages, the RFC Editor, IANA registries, W3C technical reports, project release pages) in the first week of October 2026. Where a date or version could not be confirmed against a primary source it is marked *(unverified)*. Standards evolve; readers should check the canonical URL.

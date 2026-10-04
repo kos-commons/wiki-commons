@@ -1,6 +1,6 @@
 # Appendix A · Wiki Engine Landscape
 
-> **Appendices** · **Status:** Working Draft 0.1 (October 2026) · Facts checked against primary sources in early October 2026; items marked *(unverified)* could not be confirmed against a primary source and are offered with that caveat.
+> **Appendices** · **Status:** Working Draft 0.4 (October 2026) · Facts checked against primary sources in early October 2026; items marked *(unverified)* could not be confirmed against a primary source and are offered with that caveat.
 > Index: [README](../../README.md) · Next: [B · Syntax Crosswalk](B-Syntax_Crosswalk.md)
 
 **In one sentence:** A survey of fifty-odd wiki engines and wiki-like knowledge tools across three generations, written to show what they share, where they diverge, and which ideas each contributed, so that no single engine is mistaken for "the wiki".

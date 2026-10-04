@@ -1,11 +1,11 @@
 # 14 · Security, Privacy and Trust
 
-> **Part III — Interoperability Guidelines** · **Status:** Working Draft 0.1 (October 2026)
+> **Part III — Interoperability Guidelines** · **Status:** Working Draft 0.4 (October 2026)
 > Previous: [13 · Accessibility, Internationalization and Web Standards](13-Accessibility_Internationalization_and_Web_Standards.md) · Next: [15 · Licensing and Attribution](15-Licensing_and_Attribution.md)
 
 **In one sentence:** A wiki renders text from strangers, imports bundles from other systems, runs other people's plugins, and remembers everything forever; these guidelines cover the security practices that follow from that, the privacy of contributors and readers, and the signals that let people trust what they read.
 
-Recommendations carry the prefixes `SEC-` (security), `PRIV-` (privacy), and `TRUST-` (provenance and trust). Access-control *models* remain out of scope; what is in scope is how an engine protects itself, its users, and its content regardless of model.
+Recommendations carry the prefixes `SEC-` (security), `PRIV-` (privacy), and `TRUST-` (provenance and trust). The numbered recommendations are the guidance of this chapter ([00 §4](00-Overview_and_Vision.md#4-guidance-language)); the surrounding sections explain, give evidence, and add no obligations. Access-control *models* remain out of scope; what is in scope is how an engine protects itself, its users, and its content regardless of model.
 
 ---
 

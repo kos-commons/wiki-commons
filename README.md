@@ -2,7 +2,7 @@
 
 **Open guidelines for wiki engines: a pattern language for the wiki experience and a set of portable conventions so that knowledge outlives the software it was written in.**
 
-> Status: **Working Draft 0.1** (October 2026). Everything here is open for discussion; identifiers may still change before 1.0. See [CHANGELOG](CHANGELOG.md) and [CONTRIBUTING](CONTRIBUTING.md).
+> Status: **Working Draft 0.4** (October 2026). Everything here is open for discussion; identifiers may still change before 1.0. See [CHANGELOG](CHANGELOG.md) and [CONTRIBUTING](CONTRIBUTING.md).
 >
 > Read online: **<https://kos-commons.github.io/wiki-commons/>** (built from this repository on every push to `main`).
 
@@ -45,13 +45,14 @@ guidelines/
     D-Portable_Wiki_Bundle_Example.md              walkthrough of the example bundle
     E-Glossary.md
     F-References.md                                standards (versions checked October 2026), history, research
-schemas/                                           JSON Schemas for frontmatter, manifest, history, discussions, attachments, site description, self-assessment
-examples/portable-wiki-bundle/                     a small, complete bundle exercising every optional part
     G-Open_Knowledge_Format_Alignment.md           field-by-field mapping to Google Cloud's OKF and the choices made to stay close
     H-BookStack_and_MediaWiki_Alignment.md         mappings for BookStack's Portable ZIP and MediaWiki's XML dump
+    I-Federation_Architecture_Patterns.md          fourteen exploratory patterns (FED-1 … FED-14) for wikis that see, cite, copy, and notify each other
+schemas/                                           JSON Schemas for frontmatter, manifest, history, discussions, attachments, site description, self-assessment
+examples/portable-wiki-bundle/                     a small, complete bundle exercising every optional part
 corpus/                                            conformance corpus: markup, resolution, and bundle cases with reviewed expectations
-converters/                                        optional adapters for other toolchains: a remark plugin and a Pandoc Lua filter
-tools/                                             reference tooling: scanner, dialect converters, bundle build/unbundle, OKF, BookStack, and MediaWiki import/export, reports, validator, link checkers
+converters/                                        optional adapters for other toolchains: remark and markdown-it plugins and a Pandoc Lua filter
+tools/                                             reference tooling: scanner, dialect converters, linter with suggestions, bundle build/unbundle, OKF, BookStack, and MediaWiki import/export, reports, validator, link checkers
 tests/                                             unit and round-trip tests (python3 -m unittest discover -s tests)
 book/                                              mdBook configuration and table of contents for the published site
 .github/workflows/pages.yml                        CI: tests, corpus, site build, and GitHub Pages deployment
@@ -87,7 +88,7 @@ python3 tools/wikicommons.py bookstack import Handbook.zip out/bundle    # BookS
 python3 tools/wikicommons.py corpus check                                # run the conformance corpus
 ```
 
-Every import and export writes a report beside its result saying what was degraded or dropped. Dialects: `portable`, `obsidian`, `foam`, `dendron`, `logseq`, `gollum` (GitHub and GitLab wikis), `static`. Pandoc, when installed, extends the conversions (HTML and wikitext); without it the tools still run and say what they could not convert. See [tools/README.md](tools/README.md), [corpus/README.md](corpus/README.md), and [converters/README.md](converters/README.md) for the remark plugin and the Pandoc filter.
+Every import and export writes a report beside its result saying what was degraded or dropped. Dialects: `portable`, `obsidian`, `foam`, `dendron`, `logseq`, `gollum` (GitHub and GitLab wikis), `static`. Pandoc, when installed, extends the conversions (HTML and wikitext); without it the tools still run and say what they could not convert. `wikicommons.py lint` offers suggestions (never blocking, safe fixes with `--fix`), each pointing at the guideline it comes from. See [tools/README.md](tools/README.md), [corpus/README.md](corpus/README.md), and [converters/README.md](converters/README.md) for the remark and markdown-it plugins and the Pandoc filter.
 
 All of this tooling is optional. The guidelines describe conventions an engine *may* adopt; the tools exist so that adopting them, or moving content between engines that have not, costs less.
 

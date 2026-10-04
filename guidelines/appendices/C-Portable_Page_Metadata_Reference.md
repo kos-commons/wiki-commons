@@ -1,6 +1,6 @@
 # Appendix C · Portable Page Metadata Reference
 
-> **Appendices** · **Status:** Working Draft 0.1 (October 2026)
+> **Appendices** · **Status:** Working Draft 0.4 (October 2026)
 > Previous: [B · Syntax Crosswalk](B-Syntax_Crosswalk.md) · Next: [D · Portable Wiki Bundle Example](D-Portable_Wiki_Bundle_Example.md)
 
 **In one sentence:** The field-by-field reference for the frontmatter vocabulary introduced in [Chapter 09](../09-Metadata_and_Frontmatter.md), with types, examples, mappings to engines and to established vocabularies, and the YAML pitfalls that bite in practice.

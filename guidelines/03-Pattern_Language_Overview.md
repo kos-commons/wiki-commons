@@ -1,6 +1,6 @@
 # 03 · Pattern Language Overview
 
-> **Part II — The Pattern Language** · **Status:** Working Draft 0.1 (October 2026)
+> **Part II — The Pattern Language** · **Status:** Working Draft 0.4 (October 2026)
 > Previous: [02 · Guiding Principles](02-Guiding_Principles.md) · Next: [04 · Discovery, Navigation and Topology](04-Discovery_Navigation_and_Topology.md)
 
 **In one sentence:** Part II describes the wiki experience as a pattern language: fifty-odd named, reusable solutions with their context, tensions, and real-world examples, organized so that designers, developers, and communities can talk about "wiki-ness" precisely without prescribing layouts.
@@ -26,7 +26,7 @@ Every pattern in Chapters 04 to 07 uses the same structure.
 | **Maturity** | *Established* (found in most engines of several generations), *Emerging* (common in modern tools, spreading), or *Exploratory* (promising, rarely implemented). |
 | **Context** | When the pattern applies. |
 | **Tension** | The forces the pattern balances: the problem, stated as competing needs. |
-| **Guidance** | What an engine should, is encouraged to, or may do. Capability language, never layout. |
+| **Guidance** | What an engine should, is encouraged to, or may do. Capability language, never layout. The only field that carries guidance; labelled *Guidance (exploratory)* when the pattern's maturity is Exploratory, so that nothing in it reads as a baseline. |
 | **Observed in** | How existing engines realize the pattern, across generations. Descriptive, not exhaustive, not an endorsement. |
 | **Interchange** | How the pattern's data survives export and import, and how it degrades. Links to Part III where relevant. |
 | **Related** | Neighbouring patterns and principles. |

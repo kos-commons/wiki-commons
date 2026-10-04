@@ -1,6 +1,6 @@
 # Appendix E · Glossary
 
-> **Appendices** · **Status:** Working Draft 0.1 (October 2026)
+> **Appendices** · **Status:** Working Draft 0.4 (October 2026)
 > Previous: [D · Portable Wiki Bundle Example](D-Portable_Wiki_Bundle_Example.md) · Next: [F · References](F-References.md)
 
 Terms are defined as used in this suite. Engine-specific synonyms are listed so that readers coming from any tradition can find their own vocabulary. Cross-references point to the chapter where a term is developed.

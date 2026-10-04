@@ -25,7 +25,7 @@ Identifiers (`NAV-3`, `MKUP-6`, `XFER-7`) are stable once released in a numbered
 
 ## Editorial principles
 
-- **Guidance, not mandates.** Use *should*, *recommended*, *encouraged*, *may*, *discouraged*, *exploratory* as defined in [00 §4](guidelines/00-Overview_and_Vision.md#4-guidance-language). Never introduce a *must* except when quoting another standard or stating a logical necessity.
+- **Guidance, not mandates.** Use *should*, *recommended*, *encouraged*, *may*, *discouraged*, *exploratory* as defined in [00 §4](guidelines/00-Overview_and_Vision.md#4-guidance-language). Never introduce a *must* except when quoting another standard or stating a logical necessity. Set the verb in bold; it marks the tier ([00 §4.1](guidelines/00-Overview_and_Vision.md#41-three-tiers-at-a-glance)). Guidance lives only in a pattern's *Guidance* field, in numbered recommendations, and in profile lists; *Context*, *Tension*, *Observed in*, appendices, and companion material explain and never add obligations. State baseline (*should*) items before optional (*may*) ones.
 - **Evidence first.** Claims about engines come from primary sources. If you cannot verify something, mark it *(unverified)* rather than leaving it out or stating it flatly.
 - **Engine-plural.** No engine is "the wiki". Draw on classic, transitional, and modern engines, and on engines outside the English-speaking world.
 - **Capabilities, not layouts.** Patterns describe what a user can do, never where a control sits or how it looks.

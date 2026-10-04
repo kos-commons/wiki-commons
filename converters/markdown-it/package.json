@@ -1,0 +1,15 @@
+{
+  "name": "markdown-it-wiki-commons",
+  "version": "0.4.0",
+  "description": "markdown-it plugin for the Portable Wiki Markdown profile of the Wiki Commons guidelines: [[free links]], ![[embeds]], ^block-ids, and > [!NOTE] callouts",
+  "type": "module",
+  "main": "index.js",
+  "exports": "./index.js",
+  "files": ["index.js", "README.md"],
+  "scripts": { "test": "node --test test.js" },
+  "keywords": ["markdown-it", "markdown-it-plugin", "wiki", "wikilink", "markdown", "wiki-commons"],
+  "license": "Apache-2.0",
+  "repository": {"type": "git", "url": "https://github.com/kos-commons/wiki-commons", "directory": "converters/markdown-it"},
+  "peerDependencies": {"markdown-it": ">=13"},
+  "devDependencies": {"markdown-it": "^14.0.0"}
+}

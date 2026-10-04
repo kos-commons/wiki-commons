@@ -1,11 +1,11 @@
 # 13 · Accessibility, Internationalization and Web Standards
 
-> **Part III — Interoperability Guidelines** · **Status:** Working Draft 0.1 (October 2026)
+> **Part III — Interoperability Guidelines** · **Status:** Working Draft 0.4 (October 2026)
 > Previous: [12 · Extensibility, Macros and Dynamic Content](12-Extensibility_Macros_and_Dynamic_Content.md) · Next: [14 · Security, Privacy and Trust](14-Security_Privacy_and_Trust.md)
 
 **In one sentence:** A wiki is both a publication and an authoring tool, read and written by people of every ability and every language; these guidelines point to the web's existing accessibility and internationalization standards and add the handful of wiki-specific concerns (red links, diffs, free links in scripts without capital letters, input methods) that those standards do not spell out.
 
-Recommendations carry the prefixes `A11Y-` (accessibility), `I18N-` (internationalization and localization), and `WEB-` (web platform).
+Recommendations carry the prefixes `A11Y-` (accessibility), `I18N-` (internationalization and localization), and `WEB-` (web platform). The numbered recommendations are the guidance of this chapter ([00 §4](00-Overview_and_Vision.md#4-guidance-language)); the surrounding sections explain, give evidence, and add no obligations.
 
 ---
 

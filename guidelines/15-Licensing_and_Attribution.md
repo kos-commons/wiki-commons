@@ -1,11 +1,11 @@
 # 15 · Licensing and Attribution
 
-> **Part III — Interoperability Guidelines** · **Status:** Working Draft 0.1 (October 2026)
+> **Part III — Interoperability Guidelines** · **Status:** Working Draft 0.4 (October 2026)
 > Previous: [14 · Security, Privacy and Trust](14-Security_Privacy_and_Trust.md) · Next: [16 · Conformance Profiles and Self-Assessment](16-Conformance_Profiles_and_Self_Assessment.md)
 
 **In one sentence:** Knowledge can only outlive its software if it is legally allowed to move; these guidelines ask every wiki to declare its content license visibly and machine-readably, to carry licenses and attribution through every export, and to prefer, for shared knowledge, licenses that meet the Open Definition.
 
-Recommendations carry the prefix `LIC-`. Nothing in this chapter is legal advice; it describes practices that make licensing legible and portable.
+Recommendations carry the prefix `LIC-`. The numbered recommendations are the guidance of this chapter ([00 §4](00-Overview_and_Vision.md#4-guidance-language)); the surrounding sections explain, give evidence, and add no obligations. Nothing in this chapter is legal advice; it describes practices that make licensing legible and portable.
 
 ---
 

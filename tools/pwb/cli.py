@@ -158,6 +158,16 @@ def cmd_mediawiki(args) -> int:
     return 0
 
 
+def cmd_lint(args) -> int:
+    from .lint import LEVELS, format_json, format_text, lint_path
+    result = lint_path(Path(args.path), fix=args.fix)
+    print(format_json(result) if args.format == "json" else format_text(result))
+    if args.fail_on:
+        threshold = LEVELS[args.fail_on]
+        return 1 if any(LEVELS[f.level] >= threshold for f in result.findings) else 0
+    return 0
+
+
 def cmd_validate(args) -> int:
     sys.path.insert(0, str(ROOT / "tools"))
     import validate_bundle  # type: ignore
@@ -230,6 +240,12 @@ def main(argv=None) -> int:
     s.add_argument("--no-history", action="store_true", help="import only the current revision of each page")
     s.add_argument("--no-report", action="store_true")
     s.set_defaults(func=cmd_mediawiki)
+
+    s = sub.add_parser("lint", help="suggestions for a page, a folder of pages, or a bundle (never blocking by default)")
+    s.add_argument("path"); s.add_argument("--fix", action="store_true", help="apply safe fixes in place")
+    s.add_argument("--format", choices=["text", "json"], default="text")
+    s.add_argument("--fail-on", choices=["warning", "suggestion", "info"], default=None, help="exit 1 when findings at or above this level exist")
+    s.set_defaults(func=cmd_lint)
 
     s = sub.add_parser("validate", help="validate a bundle (same as tools/validate_bundle.py)")
     s.add_argument("bundle"); s.add_argument("--quiet", action="store_true")

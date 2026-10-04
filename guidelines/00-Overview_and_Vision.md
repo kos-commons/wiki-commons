@@ -1,6 +1,6 @@
 # 00 · Overview and Vision
 
-> **Part I — Foundations** · **Status:** Working Draft 0.1 (October 2026)
+> **Part I — Foundations** · **Status:** Working Draft 0.4 (October 2026)
 > Index: [README](../README.md) · Next: [01 · Core Concepts and Landscape](01-Core_Concepts_and_Landscape.md)
 
 **In one sentence:** Wiki Commons is a set of open, voluntary guidelines that help wiki engines of every generation keep the knowledge entrusted to them portable, legible, and alive, without asking any of them to become the same product.
@@ -70,6 +70,22 @@ These documents deliberately avoid the imperative vocabulary of IETF-style speci
 | **exploratory** | A forward-looking idea that is not yet widely practised. Included to orient, not to recommend. |
 
 The word **must** appears only when quoting another standard, or when describing a logical necessity (for example, "a revision must have a parent to be diffed against"). It never introduces a requirement of this suite.
+
+### 4.1 Three tiers at a glance
+
+Readers who think in terms of *must do*, *can do*, and *nice to have* can map the vocabulary onto three tiers. The suite itself has no mandatory tier: the closest thing to an obligation is a conformance profile, which an engine takes on voluntarily by claiming it ([Chapter 16](16-Conformance_Profiles_and_Self_Assessment.md)).
+
+| Tier | Vocabulary | Where it appears | Reading |
+|---|---|---|---|
+| **Baseline** | **should**, **recommended**, **should not**, **discouraged** | The *Guidance* field of patterns with maturity *Established* or *Emerging*; the numbered recommendations of Part III | What an engine does unless it has a reason not to. The items a conformance profile lists come from this tier, so for an engine that *claims* a profile, these are its "must do". |
+| **Optional** | **encouraged**, **may**, **optional** | Inside patterns and recommendations, usually after the baseline statements; recommendations whose strongest verb is *may* (for example MKUP-9, META-8, XFER-9) are optional as a whole | What an engine can do, and how to do it compatibly if it does. Never required by any profile on its own. |
+| **Exploratory** | **exploratory**; the pattern maturity *Exploratory*; a Part III title ending in *(exploratory)*; [Appendix I](appendices/I-Federation_Architecture_Patterns.md) in full | Forward-looking directions, written down to orient engines that are already heading there | Nice to have. Not recommended yet; may be promoted or dropped in later versions. |
+
+The tier of a statement is the tier of its verb, and the verb is always set in bold. A pattern or recommendation that mixes tiers states its baseline first and its optional refinements after.
+
+### 4.2 Guidance and explanation
+
+Only three kinds of text in this suite carry guidance: the **Guidance** field of each pattern in Part II, the numbered recommendations of Part III (`MKUP-1`, `META-2`, and so on), and the item lists of the profiles in Chapter 16. Everything else explains, motivates, or gives evidence, and adds no obligation: Part I, the *Context*, *Tension*, *Observed in*, *Interchange*, and *Related* fields, the introductory and closing sections of every chapter, Chapter 17, every appendix, and all companion material (schemas, examples, corpus, tools, converters). The schemas are the machine-readable form of recommendations in Chapters 09 and 10 and never add rules of their own.
 
 Sections titled **Observed in** describe how existing engines behave. They are evidence, not endorsements, and they are not exhaustive.
 
@@ -141,7 +157,7 @@ guidelines/
   Part IV  — Adoption
     16-Conformance_Profiles_and_Self_Assessment.md
     17-Roadmap_and_Open_Questions.md
-  appendices/
+  appendices/                    (A–F reference, G–H alignment with neighbouring formats, I exploratory)
     A-Wiki_Engine_Landscape.md
     B-Syntax_Crosswalk.md
     C-Portable_Page_Metadata_Reference.md
@@ -150,11 +166,12 @@ guidelines/
     F-References.md
     G-Open_Knowledge_Format_Alignment.md
     H-BookStack_and_MediaWiki_Alignment.md
+    I-Federation_Architecture_Patterns.md
 schemas/          machine-readable JSON Schemas for metadata and manifests
 examples/         a small, complete Portable Wiki Bundle
 corpus/           conformance corpus with reviewed expectations
-converters/       optional adapters for other toolchains (remark plugin, Pandoc filter)
-tools/            reference tooling: scanner, converters, bundle build and unbundle, OKF, BookStack, and MediaWiki interchange, reports, validator
+converters/       optional adapters for other toolchains (remark and markdown-it plugins, Pandoc filter)
+tools/            reference tooling: scanner, converters, linter, bundle build and unbundle, OKF, BookStack, and MediaWiki interchange, reports, validator
 tests/            unit and round-trip tests
 book/             mdBook configuration for the published site
 ```

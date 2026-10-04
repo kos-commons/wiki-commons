@@ -1,6 +1,6 @@
 # 02 · Guiding Principles
 
-> **Part I — Foundations** · **Status:** Working Draft 0.1 (October 2026)
+> **Part I — Foundations** · **Status:** Working Draft 0.4 (October 2026)
 > Previous: [01 · Core Concepts and Landscape](01-Core_Concepts_and_Landscape.md) · Next: [03 · Pattern Language Overview](03-Pattern_Language_Overview.md)
 
 **In one sentence:** Before any pattern or format, a wiki is a stance toward people: that they can be trusted to improve a shared thing, that unfinished work deserves a home, and that knowledge should be free to move.

@@ -1,11 +1,11 @@
 # 08 · Markup and Syntax
 
-> **Part III — Interoperability Guidelines** · **Status:** Working Draft 0.1 (October 2026)
+> **Part III — Interoperability Guidelines** · **Status:** Working Draft 0.4 (October 2026)
 > Previous: [07 · Collaboration, Awareness and Governance](07-Collaboration_Awareness_and_Governance.md) · Next: [09 · Metadata and Frontmatter](09-Metadata_and_Frontmatter.md)
 
 **In one sentence:** No engine needs to change its native markup; every engine is encouraged to be able to read and write one shared Markdown profile that carries the things Markdown alone cannot: free links, anchors, block identifiers, transclusion, tags, callouts, and a graceful way to carry everything else.
 
-Recommendations in this chapter carry the prefix `MKUP-`.
+Recommendations in this chapter carry the prefix `MKUP-`. The numbered recommendations are the guidance of this chapter ([00 §4](00-Overview_and_Vision.md#4-guidance-language)); the surrounding sections explain, give evidence, and add no obligations.
 
 ---
 

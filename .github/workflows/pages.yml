@@ -65,11 +65,18 @@ jobs:
         with:
           node-version: "22"
           cache: npm
-          cache-dependency-path: converters/remark/package-lock.json
+          cache-dependency-path: |
+            converters/remark/package-lock.json
+            converters/markdown-it/package-lock.json
 
       - name: Test the remark plugin
         working-directory: converters/remark
         run: npm ci && npm test
+      - name: Test the markdown-it plugin
+        working-directory: converters/markdown-it
+        run: npm ci && npm test
+      - name: Lint the example bundle (suggestions only; fails on warnings)
+        run: python tools/wikicommons.py lint examples/portable-wiki-bundle --fail-on warning
 
       - name: Install mdBook ${{ env.MDBOOK_VERSION }}
         run: |

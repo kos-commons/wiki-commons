@@ -1,7 +1,7 @@
 # Appendix H · BookStack Portable ZIP and MediaWiki XML Dump Alignment
 
-> **Appendices** · **Status:** Working Draft 0.3 (October 2026)
-> Previous: [G · Open Knowledge Format Alignment](G-Open_Knowledge_Format_Alignment.md) · Index: [README](../../README.md)
+> **Appendices** · **Status:** Working Draft 0.4 (October 2026)
+> Previous: [G · Open Knowledge Format Alignment](G-Open_Knowledge_Format_Alignment.md) · Next: [I · Federation Architecture Patterns](I-Federation_Architecture_Patterns.md) · Index: [README](../../README.md)
 
 **In one sentence:** Two widely used export formats, BookStack's Portable ZIP and MediaWiki's XML dump, are mapped onto the Portable Wiki Bundle field by field, with the losses named in both directions and a converter that implements each mapping.
 
@@ -92,4 +92,4 @@ Each command writes `import-report.md` or `export-report.md` beside its result (
 
 ---
 
-Previous: [G · Open Knowledge Format Alignment](G-Open_Knowledge_Format_Alignment.md) · Index: [README](../../README.md)
+Previous: [G · Open Knowledge Format Alignment](G-Open_Knowledge_Format_Alignment.md) · Next: [I · Federation Architecture Patterns](I-Federation_Architecture_Patterns.md) · Index: [README](../../README.md)

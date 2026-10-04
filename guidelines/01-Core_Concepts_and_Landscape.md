@@ -1,6 +1,6 @@
 # 01 · Core Concepts and Landscape
 
-> **Part I — Foundations** · **Status:** Working Draft 0.1 (October 2026)
+> **Part I — Foundations** · **Status:** Working Draft 0.4 (October 2026)
 > Previous: [00 · Overview and Vision](00-Overview_and_Vision.md) · Next: [02 · Guiding Principles](02-Guiding_Principles.md)
 
 **In one sentence:** This chapter names the concepts the rest of the suite relies on, maps three overlapping generations of wiki engines, shows what nearly all of them share and where they split, and draws lessons from twenty years of attempts to standardize them.

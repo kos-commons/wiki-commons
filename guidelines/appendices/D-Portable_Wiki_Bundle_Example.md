@@ -1,6 +1,6 @@
 # Appendix D · Portable Wiki Bundle Example
 
-> **Appendices** · **Status:** Working Draft 0.1 (October 2026)
+> **Appendices** · **Status:** Working Draft 0.4 (October 2026)
 > Previous: [C · Portable Page Metadata Reference](C-Portable_Page_Metadata_Reference.md) · Next: [E · Glossary](E-Glossary.md)
 
 **In one sentence:** A walk through the small but complete bundle in [`examples/portable-wiki-bundle/`](../../examples/portable-wiki-bundle/), file by file, showing what each part carries, how it degrades, and how an importer would read it.

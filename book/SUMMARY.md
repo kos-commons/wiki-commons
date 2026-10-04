@@ -32,7 +32,7 @@
 - [16 · Conformance Profiles and Self-Assessment](guidelines/16-Conformance_Profiles_and_Self_Assessment.md)
 - [17 · Roadmap and Open Questions](guidelines/17-Roadmap_and_Open_Questions.md)
 
-# Appendices
+# Appendices · Reference
 
 - [A · Wiki Engine Landscape](guidelines/appendices/A-Wiki_Engine_Landscape.md)
 - [B · Syntax Crosswalk](guidelines/appendices/B-Syntax_Crosswalk.md)
@@ -40,8 +40,12 @@
 - [D · Portable Wiki Bundle Example](guidelines/appendices/D-Portable_Wiki_Bundle_Example.md)
 - [E · Glossary](guidelines/appendices/E-Glossary.md)
 - [F · References](guidelines/appendices/F-References.md)
+
+# Appendices · Alignment and Exploration
+
 - [G · Open Knowledge Format Alignment](guidelines/appendices/G-Open_Knowledge_Format_Alignment.md)
 - [H · BookStack and MediaWiki Alignment](guidelines/appendices/H-BookStack_and_MediaWiki_Alignment.md)
+- [I · Federation Architecture Patterns](guidelines/appendices/I-Federation_Architecture_Patterns.md)
 
 # Companion Material
 
@@ -59,6 +63,7 @@
 - [Conformance Corpus](corpus/index.md)
 - [Converters](converters/index.md)
   - [remark plugin](converters/remark/index.md)
+  - [markdown-it plugin](converters/markdown-it/index.md)
   - [Pandoc filter](converters/pandoc/index.md)
 - [Building the site](book/index.md)
 - [Contributing](CONTRIBUTING.md)

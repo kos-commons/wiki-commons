@@ -1,11 +1,11 @@
 # 10 · Interchange and Portability
 
-> **Part III — Interoperability Guidelines** · **Status:** Working Draft 0.1 (October 2026)
+> **Part III — Interoperability Guidelines** · **Status:** Working Draft 0.4 (October 2026)
 > Previous: [09 · Metadata and Frontmatter](09-Metadata_and_Frontmatter.md) · Next: [11 · APIs and Discovery](11-APIs_and_Discovery.md)
 
 **In one sentence:** This chapter describes the *Portable Wiki Bundle*, a plain directory of Markdown pages, attachments, and optional history, discussions, and structured data, with a manifest that declares exactly what was carried and what was dropped, so that a wiki can move between engines without bespoke scripts and without silent loss.
 
-Recommendations in this chapter carry the prefix `XFER-`. Machine-readable schemas: `schemas/bundle-manifest.schema.json`, `schemas/history-record.schema.json`, `schemas/discussion-record.schema.json`, `schemas/attachment-meta.schema.json`. A complete small example lives in `examples/portable-wiki-bundle/` and is walked through in [Appendix D](appendices/D-Portable_Wiki_Bundle_Example.md).
+Recommendations in this chapter carry the prefix `XFER-`. The numbered recommendations are the guidance of this chapter ([00 §4](00-Overview_and_Vision.md#4-guidance-language)); the surrounding sections explain, give evidence, and add no obligations. Machine-readable schemas: `schemas/bundle-manifest.schema.json`, `schemas/history-record.schema.json`, `schemas/discussion-record.schema.json`, `schemas/attachment-meta.schema.json`. A complete small example lives in `examples/portable-wiki-bundle/` and is walked through in [Appendix D](appendices/D-Portable_Wiki_Bundle_Example.md).
 
 ---
 

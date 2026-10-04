@@ -121,10 +121,11 @@ local function emit(link, embed)
   local classes = {embed and "wiki-embed" or "wikilink"}
   if exists == false then classes[#classes + 1] = "wikilink-missing" end
   if iw then classes[#classes + 1] = "wikilink-interwiki" end
-  local attrs = {["data-wiki-target"] = target}
+  -- attributes as an ordered list so that output is deterministic (a Lua table iterated with pairs is not)
+  local attrs = {{"data-wiki-target", target}}
   local shown = raw_label or (target ~= "" and target:match("([^" .. separator:gsub("%p", "%%%0") .. "]+)$") or fragment or "")
   if exists == false then
-    attrs["aria-label"] = "page does not exist yet"
+    attrs[#attrs + 1] = {"aria-label", "page does not exist yet"}
     return pandoc.Span({pandoc.Str(shown)}, pandoc.Attr("", classes, attrs))
   end
   if kind == "heading" then href = href .. "#" .. github_anchor(fragment) elseif kind == "block" then href = href .. "#" .. fragment end

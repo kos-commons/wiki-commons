@@ -1,11 +1,11 @@
 # 11 · APIs and Discovery
 
-> **Part III — Interoperability Guidelines** · **Status:** Working Draft 0.1 (October 2026)
+> **Part III — Interoperability Guidelines** · **Status:** Working Draft 0.4 (October 2026)
 > Previous: [10 · Interchange and Portability](10-Interchange_and_Portability.md) · Next: [12 · Extensibility, Macros and Dynamic Content](12-Extensibility_Macros_and_Dynamic_Content.md)
 
 **In one sentence:** There is no "Wiki API Protocol" and this chapter does not propose one; instead it lists the *capabilities* a wiki's API is encouraged to expose and shows how to express each with existing web standards (HTTP semantics, Web Linking, OpenAPI, Atom, OpenSearch, OAuth) so that generic tools can work with any wiki that follows them.
 
-Recommendations in this chapter carry the prefix `API-`. The site description document's schema is `schemas/site-description.schema.json`.
+Recommendations in this chapter carry the prefix `API-`. The numbered recommendations are the guidance of this chapter ([00 §4](00-Overview_and_Vision.md#4-guidance-language)); the surrounding sections explain, give evidence, and add no obligations. The site description document's schema is `schemas/site-description.schema.json`.
 
 ---
 
@@ -157,7 +157,7 @@ The capabilities above make a wiki legible to tools. A few further steps, all us
 - **An interwiki registry.** A community-maintained list of common prefixes and URL templates would let every engine ship the same defaults ([17 · Roadmap](17-Roadmap_and_Open_Questions.md)).
 - **Agent interfaces.** By 2026 a number of engines expose their content to software agents through Model Context Protocol servers or agent-oriented command-line tools in addition to, or instead of, REST. These are a new kind of client, not a new kind of wiki; the capabilities listed above are what such interfaces end up wrapping, and engines are **encouraged** to build them on the same page, history, and search operations rather than on a parallel model.
 
-None of this is required for a good wiki. All of it becomes possible once the ordinary capabilities above exist.
+None of this is required for a good wiki. All of it becomes possible once the ordinary capabilities above exist. [Appendix I](appendices/I-Federation_Architecture_Patterns.md) develops these ideas into fourteen exploratory architecture patterns.
 
 ## 5. Observed in
 

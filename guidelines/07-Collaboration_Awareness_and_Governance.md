@@ -1,11 +1,11 @@
 # 07 · Collaboration, Awareness and Governance
 
-> **Part II — The Pattern Language** · **Status:** Working Draft 0.1 (October 2026)
+> **Part II — The Pattern Language** · **Status:** Working Draft 0.4 (October 2026)
 > Previous: [06 · Temporal Design and Revision History](06-Temporal_Design_and_Revision_History.md) · Next: [08 · Markup and Syntax](08-Markup_and_Syntax.md)
 
 **In one sentence:** These fourteen patterns are the social machinery of a wiki: how a community sees itself at work, talks beside the content, trusts by default, protects softly, and governs through visibility rather than locks.
 
-The pattern format is explained in [03 · Pattern Language Overview](03-Pattern_Language_Overview.md#2-pattern-format). Access-control *models* are out of scope ([00 §7.2](00-Overview_and_Vision.md#72-explicitly-out-of-scope)); this chapter addresses only how access decisions are made visible and how they interact with portability.
+The pattern format is explained in [03 · Pattern Language Overview](03-Pattern_Language_Overview.md#2-pattern-format). Only the **Guidance** field of each pattern carries guidance, in the vocabulary of [00 §4](00-Overview_and_Vision.md#4-guidance-language); *Context*, *Tension*, *Observed in*, and *Interchange* explain and give evidence. Access-control *models* are out of scope ([00 §7.2](00-Overview_and_Vision.md#72-explicitly-out-of-scope)); this chapter addresses only how access decisions are made visible and how they interact with portability.
 
 ---
 

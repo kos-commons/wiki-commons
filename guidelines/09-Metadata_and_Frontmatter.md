@@ -1,11 +1,11 @@
 # 09 · Metadata and Frontmatter
 
-> **Part III — Interoperability Guidelines** · **Status:** Working Draft 0.1 (October 2026)
+> **Part III — Interoperability Guidelines** · **Status:** Working Draft 0.4 (October 2026)
 > Previous: [08 · Markup and Syntax](08-Markup_and_Syntax.md) · Next: [10 · Interchange and Portability](10-Interchange_and_Portability.md)
 
 **In one sentence:** A small, shared vocabulary of page metadata, carried in YAML frontmatter and mapped to Dublin Core and schema.org, lets titles, aliases, tags, dates, authorship, status, and license survive the move between engines that otherwise agree on nothing.
 
-Recommendations in this chapter carry the prefix `META-`. The machine-readable form is `schemas/page-frontmatter.schema.json`; the field-by-field reference is [Appendix C](appendices/C-Portable_Page_Metadata_Reference.md).
+Recommendations in this chapter carry the prefix `META-`. The numbered recommendations are the guidance of this chapter ([00 §4](00-Overview_and_Vision.md#4-guidance-language)); the surrounding sections explain, give evidence, and add no obligations. The machine-readable form is `schemas/page-frontmatter.schema.json`; the field-by-field reference is [Appendix C](appendices/C-Portable_Page_Metadata_Reference.md).
 
 ---
 

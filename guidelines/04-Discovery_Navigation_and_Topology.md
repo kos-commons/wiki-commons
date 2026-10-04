@@ -1,11 +1,11 @@
 # 04 · Discovery, Navigation and Topology
 
-> **Part II — The Pattern Language** · **Status:** Working Draft 0.1 (October 2026)
+> **Part II — The Pattern Language** · **Status:** Working Draft 0.4 (October 2026)
 > Previous: [03 · Pattern Language Overview](03-Pattern_Language_Overview.md) · Next: [05 · Authoring and Participation](05-Authoring_and_Participation.md)
 
 **In one sentence:** These sixteen patterns describe how a wiki is *shaped*: how pages are named and addressed, how links weave them into a mesh, how gaps become invitations, and how readers keep their bearings while jumping between ideas.
 
-The pattern format is explained in [03 · Pattern Language Overview](03-Pattern_Language_Overview.md#2-pattern-format). Guidance uses the vocabulary of [00 · Overview and Vision §4](00-Overview_and_Vision.md#4-guidance-language).
+The pattern format is explained in [03 · Pattern Language Overview](03-Pattern_Language_Overview.md#2-pattern-format). Only the **Guidance** field of each pattern carries guidance, in the vocabulary of [00 §4](00-Overview_and_Vision.md#4-guidance-language); *Context*, *Tension*, *Observed in*, and *Interchange* explain and give evidence.
 
 ---
 

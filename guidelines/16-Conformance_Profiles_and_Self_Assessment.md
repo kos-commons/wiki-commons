@@ -1,6 +1,6 @@
 # 16 · Conformance Profiles and Self-Assessment
 
-> **Part IV — Adoption** · **Status:** Working Draft 0.1 (October 2026)
+> **Part IV — Adoption** · **Status:** Working Draft 0.4 (October 2026)
 > Previous: [15 · Licensing and Attribution](15-Licensing_and_Attribution.md) · Next: [17 · Roadmap and Open Questions](17-Roadmap_and_Open_Questions.md)
 
 **In one sentence:** Profiles are named bundles of recommendations that let an engine, a converter, or an operator say precisely what they do in a few words; they are a vocabulary for honest self-description, not a certification.
@@ -13,7 +13,9 @@ Nothing in this suite is mandatory, so "conformance" cannot mean passing a gate.
 
 A profile is a list of pattern and recommendation identifiers from Parts II and III. An engine, tool, or deployment **may** claim a profile when it satisfies the listed items, or satisfies most of them and documents the exceptions. Claims are self-made, public, and revisable. There is no certifying body, no logo program, and no fee; a community-maintained registry of self-assessments is proposed as future work ([17 · Roadmap](17-Roadmap_and_Open_Questions.md)).
 
-Profiles are versioned with the suite. A claim **should** name the version: `portable-content@0.1`.
+Profiles are versioned with the suite. A claim **should** name the version: `portable-content@0.4`.
+
+In the three tiers of [00 §4.1](00-Overview_and_Vision.md#41-three-tiers-at-a-glance), a profile is the one place where baseline items become something an engine has to do, and only for the engine that chooses to claim the profile. Profiles list baseline items; optional and exploratory items never appear in a profile.
 
 ## 2. The profiles
 

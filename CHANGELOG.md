@@ -2,6 +2,15 @@
 
 All notable changes to the Wiki Commons guidelines. Versions follow a semantic scheme: a major version only when published identifiers change meaning, a minor version when patterns or recommendations are added, a patch version for editorial corrections.
 
+## 0.4.0 — 2026-10-05
+
+- **A linter with suggestions** (`wikicommons.py lint`), in the spirit of AUTH-13: it lints a page, a folder, or a bundle; every finding is a warning, a suggestion, or a note that names the guideline it comes from (frontmatter pitfalls, YAML coercion of dates and `yes`/`no`, legacy keys, heading structure, missing alternative text, non-descriptive link text, duplicate or missing block identifiers, unclosed envelopes, dangling and ambiguous links, label-order hints, undeclared prefixes, raw HTML, tabs, line endings); nothing blocks unless `--fail-on` is given; `--fix` applies only safe textual changes and preserves quoting; `--format json` for editors.
+- **A markdown-it plugin** (`converters/markdown-it/`, `markdown-it-wiki-commons`) with the same HTML conventions as the remark plugin: free links, labels in either order, heading and block fragments, interwiki prefixes, embeds, block identifiers on paragraphs and list items, callouts; tests run in CI.
+- **Appendix I · Federation Architecture Patterns:** fourteen exploratory patterns (FED-1 to FED-14), four topologies, a minimal federation recipe built only from Part III capabilities, and open questions; linked from chapter 11 §4 and roadmap Q6.
+- **Content audit** on the distinction between guidance and explanation and on the order of the suite: chapter 00 §4 gains *Three tiers at a glance* (baseline / optional / exploratory, mapped to the vocabulary and to where each appears) and *Guidance and explanation* (the three places that carry guidance; everything else is informative); every Part II and Part III chapter header now says where its guidance lives; chapter 03 documents the *Guidance (exploratory)* label; chapter 16 states that profiles list baseline items only; status lines read 0.4 throughout; the README tree and the site's table of contents group appendices into reference (A–F) and alignment and exploration (G–I); the roadmap opening no longer describes 0.1 as current.
+- Pandoc filter: attribute order is now deterministic (ordered attribute list), and the test checks attributes independently of order.
+- Roadmap updated; version 0.4.0 in the tooling and its self-assessment.
+
 ## 0.3.0 — 2026-10-05
 
 - **Converters for common toolchains** (`converters/`): a remark plugin (`converters/remark/`, `remark-wiki-commons`) that renders `[[free links]]`, `![[embeds]]`, `^block-ids`, and `> [!NOTE]` callouts to the HTML conventions of chapter 08 and stringifies them back; a Pandoc Lua filter (`converters/pandoc/wiki-commons.lua`) for Pandoc's wikilink extension that resolves links, handles embeds, block ids, and callouts, and keeps free links when writing MediaWiki or DokuWiki. Both have tests; CI runs them.

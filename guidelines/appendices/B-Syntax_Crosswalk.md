@@ -1,6 +1,6 @@
 # Appendix B · Syntax Crosswalk
 
-> **Appendices** · **Status:** Working Draft 0.1 (October 2026)
+> **Appendices** · **Status:** Working Draft 0.4 (October 2026)
 > Previous: [A · Wiki Engine Landscape](A-Wiki_Engine_Landscape.md) · Next: [C · Portable Page Metadata Reference](C-Portable_Page_Metadata_Reference.md)
 
 **In one sentence:** The same twenty ideas, written twenty ways: a construct-by-construct comparison of wiki markups with the Portable Wiki Markdown form of each, for converter authors and for anyone who wants to see how small the real differences are.
